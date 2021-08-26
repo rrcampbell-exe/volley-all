@@ -1,0 +1,30 @@
+{
+  "name": "volley-all",
+  "version": "1.0.0",
+  "description": "A full-stack application to help taverns manage—and users participate in—tavern league volleyball.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrcampbell-exe/volley-all.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rrcampbell-exe/volley-all/issues"
+  },
+  "homepage": "https://github.com/rrcampbell-exe/volley-all#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  }
+}
