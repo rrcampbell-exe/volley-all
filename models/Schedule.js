@@ -11,8 +11,18 @@ Schedule.init({
         primaryKey: true,
         autoIncrement: true
       },
+
+
     date: {
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
+      },
+
+    team1: {
+          type: DataTypes.STRING
+      },
+
+    team2: {
+        type: DataTypes.STRING
       }
 },
 {
