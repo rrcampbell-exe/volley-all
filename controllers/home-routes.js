@@ -3,7 +3,7 @@ const sequelize = require("../config/connection");
 const User = require("../models/User");
 
 router.get("/", (req, res) => {
-  res.render("homepage", { loggedIn: req.session.loggedIn });
+  res.render("dashboard", { loggedIn: req.session.loggedIn });
 });
 
 router.get("/login", (req, res) => {

@@ -1,0 +1,44 @@
+<div>
+  <h2>{{team.id.name}}</h2>
+  <h3>Team Record: {{team.id.wins}} Wins, {{team.id.losses}} Losses</h3>
+</div>
+
+{{#if schedule.length}}
+  <section>
+    <h2>Team Schedule</h2>
+    <table>
+        <tr>
+            <th>Game Date</th>
+            <th>Game Time</th>
+            <th>Opponent</th>
+            <th>Opponent Record</th>
+        </tr>
+        {{#each team.id.player}}
+        <tr>
+          {{> team-schedule}}
+        </tr>
+        {{/each}}
+    </table>
+  </section>
+{{/if}}
+{{#unless schedule.length}}
+  <section>
+    <h2>{{team.id.name}} has no scheduled games at this time.</h2>
+  </section>
+{{/unless}}
+
+<section>
+  <h2>{{team.id.name}} Roster</h2>
+  <table>
+      <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+      </tr>
+      {{#each team.id.player}}
+      <tr>
+          {{> player-info}}
+      </tr>
+      {{/each}}
+  </table>
+</section>
