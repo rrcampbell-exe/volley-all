@@ -3,29 +3,25 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our Team model
-class Team extends Model {};
+class Schedule extends Model {};
 
-Team.init({
+Schedule.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
       },
-      wins: {
+    date: {
         type: DataTypes.INTEGER
-      },
-      ties: {
-        type: DataTypes.INTEGER,
-      },
-
+      }
 },
 {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'team'
+    modelName: 'schedule'
   }
 );
 
-module.exports = Team;
+module.exports = Schedule;
