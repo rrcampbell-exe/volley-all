@@ -11,11 +11,8 @@ Team.init({
         primaryKey: true,
         autoIncrement: true
       },
-      wins: {
+    points: {
         type: DataTypes.INTEGER
-      },
-      ties: {
-        type: DataTypes.INTEGER,
       },
 
 },
