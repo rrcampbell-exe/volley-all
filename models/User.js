@@ -10,7 +10,6 @@ class User extends Model {
   }
 }
 
-// create fields/columns for User model
 User.init(
   {
     id: {
@@ -31,7 +30,11 @@ User.init(
         isEmail: true,
       },
     },
-    //   TODO: establish whether player is admin or general user
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,

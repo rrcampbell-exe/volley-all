@@ -1,36 +1,32 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require("sequelize");
 
-const sequelize = require('../config/connection');
+const sequelize = require("../config/connection");
 
-// create our Team model
-class Schedule extends Model {};
+class Schedule extends Model {}
 
-Schedule.init({
+Schedule.init(
+  {
     id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-      },
-
-
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     date: {
-        type: DataTypes.STRING
-      },
-
+      type: DataTypes.DATEONLY,
+    },
     team1: {
-          type: DataTypes.STRING
-      },
-
+      type: DataTypes.STRING, // or do we want to do this by team id?
+    },
     team2: {
-        type: DataTypes.STRING
-      }
-},
-{
+      type: DataTypes.STRING, // or do we want to do this by team id?
+    },
+  },
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'schedule'
+    modelName: "schedule",
   }
 );
 
