@@ -1,44 +1,46 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { Player } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// get all users
+// GET all players
 router.get("/", (req, res) => {
-  User.findAll({
+  Player.findAll({
     // TODO: populate parameters by which all users are found
   });
   // then
   // catch
 });
 
+// GET a single player by "id"
 router.get("/:id", (req, res) => {
-  User.findOne({
+  Player.findOne({
     // TODO: populate parameters by which one user is found by id
   })
     // then
     // catch
 });
 
+// Create a player
 router.post("/", withAuth, (req, res) => {
-  User.create({
+  Player.create({
     // TODO: populate parameters with which users are created
   })
     // then
 });
 
 router.post("/login", withAuth, (req, res) => {
-  User.findOne({
+  Player.findOne({
     where: {
       email: req.body.email,
     },
   })
-  .then((dbUserData) => {
-    if (!dbUserData) {
+  .then((dbPlayerData) => {
+    if (!dbPlayerData) {
       res.status(400).json({ message: "No one's bumping, setting, or spiking with that email address." });
       return;
     }
 
-    const validPassword = dbUserData.checkPassword(req.body.password);
+    const validPassword = dbPlayerData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res.status(400).json({ message: "That password is incorrect." });
@@ -47,29 +49,30 @@ router.post("/login", withAuth, (req, res) => {
 
     req.session.save(() => {
       // declare session variables
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.user_id = dbPlayerData.id;
+      req.session.username = dbPlayerData.username;
       req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: "Bump, set, spike! You are now logged in." });
+      res.json({ player: dbPlayerData, message: "Bump, set, spike! You are now logged in." });
     });
   });
 });
 
+
 router.put("/:id", withAuth, (req, res) => {
   // pass in req.body instead to only update what's passed through
-  User.update(req.body, {
+  Player.update(req.body, {
     individualHooks: true,
     where: {
       id: req.params.id,
     },
   })
-    .then((dbUserData) => {
-      if (!dbUserData[0]) {
+    .then((dbPlayerData) => {
+      if (!dbPlayerData[0]) {
         res.status(404).json({ message: "We've never seen that player before. Check your ID and try again." });
         return;
       }
-      res.json(dbUserData);
+      res.json(dbPlayerData);
     })
     .catch((err) => {
       console.log(err);
@@ -78,17 +81,17 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 router.delete("/:id", withAuth, (req, res) => {
-  User.destroy({
+  Player.destroy({
     where: {
       id: req.params.id,
     },
   })
-    .then((dbUserData) => {
-      if (!dbUserData) {
+    .then((dbPlayerData) => {
+      if (!dbPlayerData) {
         res.status(404).json({ message: "We can't delete players who don't exist. Double-check your player ID and try again." });
         return;
       }
-      res.json(dbUserData);
+      res.json(dbPlayerData);
     })
     .catch((err) => {
       console.log(err);
