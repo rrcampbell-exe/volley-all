@@ -1,35 +1,75 @@
-<div>
-  <h2>{{team.id.name}}</h2>
-  <h3>Team Record: {{team.id.wins}} Wins, {{team.id.losses}} Losses</h3>
-</div>
-
 {{#if isAdmin}}
-{{!-- create team, create game --}}
+  <section>
+    <h2>Create A Team</h2>
+    <form>
+      <label for="team-name">Team Name</label>
+      <input type="text" name="team-name" id="team-name">
+      <label for="team-code">Team Code</label>
+      <input type="text" name="team-code" id="team-code">
+      <input type="submit" value="Create Team">
+    </form>
+  </section>
+  <section>
+    <h2>Add A Game</h2>
+    <form>
+      <label for="home-team">Home Team</label>
+      <select name="home-team" id="home-team">
+        {{#each team}}
+          <option value="{{team.name}}">{{team.name}}</option>
+        {{/each}}
+      </select>
+      <label for="away-team">Away Team</label>
+      <select name="away-team" id="away-team">
+        {{#each team}}
+          <option value="{{team.name}}">{{team.name}}</option>
+        {{/each}}
+      </select>
+      <label for="game-date">Game Date</label>
+      <input type="date" id="game-date" name="game-date">
+      <label for="game-time">Home Team</label>
+      <select name="game-time" id="game-time"> {{!-- Will need some JS to convert game-time values from strings to integers --}}
+        <option value="6">6:00 p.m.</option>
+        <option value="7">7:00 p.m.</option>
+        <option value="8">8:00 p.m.</option>
+        <option value="9">9:00 p.m.</option>
+      </select>
+      <input type="submit" value="Add Game">
+    </form>
+  </section>
+  <section>
+    <h2>League Schedule</h2>
+    <table>
+      {{> game-table-header}}
+        {{#each game}}
+          <tr>
+            {{> game-partial}}
+          </tr>
+        {{/each}}
+    </table>
+  </section>
 {{/if }}
 
 {{#unless isAdmin}}
+  <div>
+    <h2>{{team.id.name}}</h2>
+    <h3>Team Record: {{team.id.wins}} Wins, {{team.id.losses}} Losses</h3>
+  </div>
   <section>
     <h2>Team Schedule</h2>
     <table>
-        <tr>
-            <th>Game Date</th>
-            <th>Game Time</th>
-            <th>Opponent</th>
-            <th>Opponent Record</th>
-        </tr>
+      {{> game-table-header}}
         {{#each team.id.player}}
         <tr>
-          {{> team-game}}
+          {{> game-partial}}
         </tr>
         {{/each}}
     </table>
   </section>
-{{/unless}}
-{{#unless game.length}}
-  <section>
-    <h2>{{team.id.name}} has no scheduled games at this time.</h2>
-  </section>
-{{/unless}}
+  {{#unless game.length}}
+    <section>
+      <h2>{{team.id.name}} has no scheduled games at this time.</h2>
+    </section>
+  {{/unless}}
 
 <section>
   <h2>{{team.id.name}} Roster</h2>
@@ -46,3 +86,4 @@
       {{/each}}
   </table>
 </section>
+{{/unless}}
