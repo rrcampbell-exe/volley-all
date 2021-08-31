@@ -1,8 +1,7 @@
 const router = require("express").Router();
-const { Team } = require("../../models");
-const Game = require("../../models/Game");
-const Player = require("../../models/Player");
+const { Team, Game, Player } = require("../../models"); // Once associations are done, this will pull the models from models/index.js
 const withAuth = require("../../utils/auth");
+// Decide if withAuth is needed/where to put it
 
 // GET all teams
 router.get(`/`, (req, res) => {

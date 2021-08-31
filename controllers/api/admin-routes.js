@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Admin } = require("../../models");
 const withAuth = require("../../utils/auth");
+// Decide if withAuth is needed/where to put it
 
 // GET all admins
 router.get(`/`, (req, res) => {
