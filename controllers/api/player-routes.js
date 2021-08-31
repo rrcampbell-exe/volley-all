@@ -5,27 +5,51 @@ const withAuth = require("../../utils/auth");
 // GET all players
 router.get("/", (req, res) => {
   Player.findAll({
-    // TODO: populate parameters by which all users are found
-  });
-  // then
-  // catch
+    attributes: { exclude: [`password`] }
+  })
+    .then(dbPlayerData => res.json(dbPlayerData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // GET a single player by "id"
 router.get("/:id", (req, res) => {
   Player.findOne({
-    // TODO: populate parameters by which one user is found by id
+    attribute: { exclude: [`password`] },
+    where: {
+      id: req.params.id
+    }
   })
-    // then
-    // catch
+    .then(dbPlayerData => {
+      if (!dbPlayerData) {
+          res.status(404).json({ message: `No player found with this id` });
+          return;
+      }
+      res.json(dbPlayerData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // Create a player
 router.post("/", withAuth, (req, res) => {
   Player.create({
-    // TODO: populate parameters with which users are created
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    team_id: req.body.team_id,
+    email: req.body.email, // Inherited from User?
+    password: req.body.password // Inherited from User?
+
   })
-    // then
+    .then(dbPlayerData => res.json(dbPlayerData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.post("/login", withAuth, (req, res) => {
