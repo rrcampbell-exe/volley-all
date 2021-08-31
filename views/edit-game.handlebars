@@ -1,0 +1,38 @@
+  <section>
+    <h2>Original Game</h2>
+      <table>
+        <tr>
+          <td>{{date}}</td>
+          <td>{{time}}</td>
+          <td>{{home-team}}</td> 
+          <td>{{home-team.points}}</td> 
+          <td>{{away-team}}</td> 
+          <td>{{away-team.points}}</td>
+        </tr>
+      </table>
+    <h2>Edit Game</h2>
+    <form>
+      <label for="home-team">Home Team</label>
+      <select name="home-team" id="home-team">
+        {{#each team}}
+          <option value="{{team.name}}">{{team.name}}</option>
+        {{/each}}
+      </select>
+      <label for="away-team">Away Team</label>
+      <select name="away-team" id="away-team">
+        {{#each team}}
+          <option value="{{team.name}}">{{team.name}}</option>
+        {{/each}}
+      </select>
+      <label for="game-date">Game Date</label>
+      <input type="date" id="game-date" name="game-date" value="{{date}}">
+      <label for="game-time">Game Time</label>
+      <select name="game-time" id="game-time" value="{{time}}"> {{!-- Will need some JS to convert game-time values from strings to integers --}}
+        <option value="6">6:00 p.m.</option>
+        <option value="7">7:00 p.m.</option>
+        <option value="8">8:00 p.m.</option>
+        <option value="9">9:00 p.m.</option>
+      </select>
+      <button type="submit">Add Game</button> 
+    </form>
+  </section>
