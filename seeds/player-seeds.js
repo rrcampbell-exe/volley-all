@@ -1,6 +1,6 @@
 const { Player } = require('../models');
 
-const playerdata = [
+const playerData = [
     {
         //insert data
     },

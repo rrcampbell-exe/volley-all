@@ -2,38 +2,36 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection");
 
-// create our Team model
-class Team extends Model {}
+class Game extends Model {}
 
-Team.init(
+Game.init(
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    team_name: {
-      type: DataTypes.STRING,
+    date: {
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
-    code: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    wins: {
+    time: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0
     },
-    losses: {
+    home_team: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
+      references: {
+        model: "team",
+        key: "id",
+      },
     },
-    points: {
+    away_team: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
+      references: {
+        model: "team",
+        key: "id",
+      },
     },
   },
   {
@@ -41,8 +39,8 @@ Team.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "team",
+    modelName: "game",
   }
 );
 
-module.exports = Team;
+module.exports = Game;

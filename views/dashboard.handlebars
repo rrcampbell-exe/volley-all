@@ -3,9 +3,13 @@
   <h3>Team Record: {{team.id.wins}} Wins, {{team.id.losses}} Losses</h3>
 </div>
 
-{{#if schedule.length}}
+{{#if isAdmin}}
+{{!-- create team, create game --}}
+{{/if }}
+
+{{#unless isAdmin}}
   <section>
-    <h2>Team Schedule</h2>
+    <h2>Team game</h2>
     <table>
         <tr>
             <th>Game Date</th>
@@ -15,13 +19,13 @@
         </tr>
         {{#each team.id.player}}
         <tr>
-          {{> team-schedule}}
+          {{> team-game}}
         </tr>
         {{/each}}
     </table>
   </section>
-{{/if}}
-{{#unless schedule.length}}
+{{/unless}}
+{{#unless game.length}}
   <section>
     <h2>{{team.id.name}} has no scheduled games at this time.</h2>
   </section>

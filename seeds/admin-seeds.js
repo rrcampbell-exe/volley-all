@@ -1,6 +1,6 @@
 const { Admin } = require('../models');
 
-const admindata = [
+const adminData = [
     {
         //insert data
     },
