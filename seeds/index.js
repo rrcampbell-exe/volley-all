@@ -11,19 +11,18 @@ const seedAll = async () => {
     await sequelize.sync({ force: true });
     console.log('--------------');
     
+    await seedTeams();
+    console.log('--------------');
+    
     await seedPlayers();
     console.log('--------------');
   
     await seedGames();
     console.log('--------------');
-  
-    await seedTeams();
-    console.log('--------------');
 
     await seedAdmins();
     console.log('--------------');
-
-
+    
     process.exit(0);
   };
   
