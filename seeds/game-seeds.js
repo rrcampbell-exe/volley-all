@@ -1,4 +1,4 @@
-const { game } = require('../models');
+const { Game } = require('../models');
 
 
 //we need 1 team play with all other and teams, and we need this for each team ?
