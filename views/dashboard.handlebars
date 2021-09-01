@@ -1,13 +1,25 @@
 {{#if isAdmin}}
   <section>
     <h2>Create A Team</h2>
-    <form>
+    <form class="create-team-form">
       <label for="team-name">Team Name</label>
       <input type="text" name="team-name" id="team-name">
       <label for="team-code">Team Code</label>
       <input type="text" name="team-code" id="team-code">
-      <input type="submit" value="Create Team">
+      <button type="submit">Create Team</button>
     </form>
+  </section>
+  <section>
+    <h2>Current Team List</h2>
+    <ul>
+      {{#each team}}
+        <li>
+          {{> team-info }}
+          <a href="/dashboard/edit/{{team.id}}" class="edit-link">Edit Team</a>
+          <button class="team-delete-btn">Delete Team</button>
+        </li>
+      {{/each}}
+    </ul>
   </section>
   <section>
     <h2>Add A Game</h2>
@@ -33,7 +45,7 @@
         <option value="8">8:00 p.m.</option>
         <option value="9">9:00 p.m.</option>
       </select>
-      <input type="submit" value="Add Game">
+      <button type="submit">Add Game</button> 
     </form>
   </section>
   <section>
@@ -65,25 +77,25 @@
         {{/each}}
     </table>
   </section>
-  {{#unless game.length}}
+  {{#unless game}}
     <section>
-      <h2>{{team.id.name}} has no scheduled games at this time.</h2>
+      <h2>There are no scheduled games at this time.</h2>
     </section>
   {{/unless}}
 
-<section>
-  <h2>{{team.id.name}} Roster</h2>
-  <table>
-      <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-      </tr>
-      {{#each team.id.player}}
-      <tr>
-          {{> player-info}}
-      </tr>
-      {{/each}}
-  </table>
-</section>
+  <section>
+    <h2>{{team.id.name}} Roster</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+        {{#each team.id.player}}
+        <tr>
+            {{> player-info}}
+        </tr>
+        {{/each}}
+    </table>
+  </section>
 {{/unless}}
