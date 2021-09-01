@@ -27,13 +27,13 @@
       <label for="home-team">Home Team</label>
       <select name="home-team" id="home-team">
         {{#each team}}
-          <option value="{{team.name}}">{{team.name}}</option>
+          <option value="{{team_name}}">{{team_name}}</option>
         {{/each}}
       </select>
       <label for="away-team">Away Team</label>
       <select name="away-team" id="away-team">
         {{#each team}}
-          <option value="{{team.name}}">{{team.name}}</option>
+          <option value="{{team_name}}">{{team_name}}</option>
         {{/each}}
       </select>
       <label for="game-date">Game Date</label>
@@ -63,14 +63,14 @@
 
 {{#unless isAdmin}}
   <div>
-    <h2>{{team.id.name}}</h2>
-    <h3>Team Record: {{team.id.wins}} Wins, {{team.id.losses}} Losses</h3>
+    <h2>{{team.team_name}}</h2>
+    <h3>Team Record: {{team.wins}} Wins, {{team.losses}} Losses</h3>
   </div>
   <section>
     <h2>Team Schedule</h2>
     <table>
       {{> game-table-header}}
-        {{#each team.id.player}}
+        {{#each team.game}}
         <tr>
           {{> game-partial}}
         </tr>
@@ -84,14 +84,14 @@
   {{/unless}}
 
   <section>
-    <h2>{{team.id.name}} Roster</h2>
+    <h2>{{team_name}} Roster</h2>
     <table>
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
         </tr>
-        {{#each team.id.player}}
+        {{#each team.player}}
         <tr>
             {{> player-info}}
         </tr>
