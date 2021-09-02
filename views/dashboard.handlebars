@@ -15,7 +15,7 @@
       {{#each team}}
         <li>
           {{> team-info }}
-          <a href="/dashboard/edit/{{team.id}}" class="edit-link">Edit Team</a>
+          <a href="/dashboard/edit/{{team.team_id}}" class="edit-link">Edit Team</a>
           <button class="team-delete-btn">Delete Team</button>
         </li>
       {{/each}}
@@ -79,7 +79,7 @@
   </section>
   {{#unless game}}
     <section>
-      <h2>There are no scheduled games at this time.</h2>
+      <p>There are no scheduled games at this time.</p>
     </section>
   {{/unless}}
 
