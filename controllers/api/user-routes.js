@@ -35,7 +35,7 @@ router.get("/:id", (req, res) => {
   User.findOne({
     attribute: { exclude: [`password`] },
     where: {
-      id: req.params.id
+      user_id: req.params.id
     }
   })
     .then(dbUserData => {
@@ -56,7 +56,7 @@ router.get("/admins/:id", (req, res) => {
   User.findOne({
     attribute: { exclude: [`password`] },
     where: {
-      id: req.params.id,
+      user_id: req.params.id,
       is_Admin: true,
     }
   })
@@ -111,8 +111,8 @@ router.post("/login", withAuth, (req, res) => {
 
     req.session.save(() => {
       // declare session variables
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.user_id = dbUserData.user_id;
+      req.session.email = dbUserData.email;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: "Bump, set, spike! You are now logged in." });
@@ -126,7 +126,7 @@ router.put("/:id", withAuth, (req, res) => {
   User.update(req.body, {
     individualHooks: true,
     where: {
-      id: req.params.id,
+      user_id: req.params.id,
     },
   })
     .then((dbUserData) => {
@@ -145,7 +145,7 @@ router.put("/:id", withAuth, (req, res) => {
 router.delete("/:id", withAuth, (req, res) => {
   User.destroy({
     where: {
-      id: req.params.id,
+      user_id: req.params.id,
     },
   })
     .then((dbUserData) => {
