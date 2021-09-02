@@ -64,7 +64,7 @@
 {{#unless is_Admin}}
   <div>
     <h2>{{team.team_name}}</h2>
-    <h3>Team Record: {{team.wins}} Wins, {{team.losses}} Losses</h3>
+    <p>Team Record: {{team.wins}} Wins, {{team.losses}} Losses ({{team.points}} points)</p>
   </div>
   <section>
     <h2>Team Schedule</h2>
@@ -77,21 +77,21 @@
         {{/each}}
     </table>
   </section>
-  {{#unless game}}
+  {{#unless team.game}}
     <section>
       <p>There are no scheduled games at this time.</p>
     </section>
   {{/unless}}
 
   <section>
-    <h2>{{team_name}} Roster</h2>
+    <h2>{{team.team_name}} Roster</h2>
     <table>
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
         </tr>
-        {{#each team.player}}
+        {{#each team.user}}
         <tr>
             {{> player-info}}
         </tr>

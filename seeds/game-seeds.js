@@ -40,8 +40,8 @@ const gameData = [
   {
     date: "2021-09-08",
     time: 7,
-    home_team: 3,
-    away_team: 6,
+    home_team: 6,
+    away_team: 3,
   },
 
   {
@@ -54,8 +54,8 @@ const gameData = [
   {
     date: "2021-09-08",
     time: 9,
-    home_team: 1,
-    away_team: 8,
+    home_team: 8,
+    away_team: 1,
   },
 ];
 
