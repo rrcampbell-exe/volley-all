@@ -7,7 +7,7 @@ async function signupFormHandler(event) {
   const password = document.querySelector("#password-signup").value.trim();
   const team_code = document.querySelector("#team-code").value.trim();
 
-  if (firstName && lastName && email && password && teamCode) {
+  if (first_name && last_name && email && password && team_code) {
     const response = await fetch("/api/users/", {
       method: "post",
       body: JSON.stringify({
