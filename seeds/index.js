@@ -1,7 +1,6 @@
-const seedPlayers = require('./player-seeds')
+const seedUsers = require('./user-seeds')
 const seedGames = require('./game-seeds')
 const seedTeams = require('./team-seeds')
-const seedAdmins = require('./admin-seeds.js')
 
 
 const sequelize = require('../config/connection');
@@ -9,20 +8,17 @@ const sequelize = require('../config/connection');
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
-    console.log('--------------');
-    
-    await seedTeams();
-    console.log('--------------');
-    
-    await seedPlayers();
-    console.log('--------------');
-  
-    await seedGames();
-    console.log('--------------');
+    console.log('------SEEDING BEGINS--------');
 
-    await seedAdmins();
-    console.log('--------------');
+    console.log('------SEEDING TEAMS--------');
+    await seedTeams();
     
+    console.log('------SEEDING USERS--------');
+    await seedUsers();
+  
+    console.log('------SEEDING GAMES--------');
+    await seedGames();
+
     process.exit(0);
   };
   

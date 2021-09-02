@@ -1,33 +1,49 @@
 const router = require("express").Router();
-const { Player } = require("../../models");
+const { User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// GET all players
+// GET all Users
 router.get("/", (req, res) => {
-  Player.findAll({
+  User.findAll({
+    group: ['team_id'],
     attributes: { exclude: [`password`] }
   })
-    .then(dbPlayerData => res.json(dbPlayerData))
+    .then(dbUserData => res.json(dbUserData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-// GET a single player by "id"
+// GET all Users with admin privileges
+router.get("/admins/", (req, res) => {
+  User.findAll({
+    attributes: { exclude: [`password`] },
+    where: {
+      is_Admin: true,
+    }
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// GET a single User by "id"
 router.get("/:id", (req, res) => {
-  Player.findOne({
+  User.findOne({
     attribute: { exclude: [`password`] },
     where: {
       id: req.params.id
     }
   })
-    .then(dbPlayerData => {
-      if (!dbPlayerData) {
-          res.status(404).json({ message: `No player found with this id` });
+    .then(dbUserData => {
+      if (!dbUserData) {
+          res.status(404).json({ message: `No User found with this id` });
           return;
       }
-      res.json(dbPlayerData);
+      res.json(dbUserData);
     })
     .catch(err => {
       console.log(err);
@@ -35,9 +51,31 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// Create a player
+// GET a single User by "id" with admin privileges
+router.get("/admins/:id", (req, res) => {
+  User.findOne({
+    attribute: { exclude: [`password`] },
+    where: {
+      id: req.params.id,
+      is_Admin: true,
+    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData) {
+          res.status(404).json({ message: `No User found with this id` });
+          return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// Create a User
 router.post("/", withAuth, (req, res) => {
-  Player.create({
+  User.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     team_id: req.body.team_id,
@@ -45,7 +83,7 @@ router.post("/", withAuth, (req, res) => {
     password: req.body.password // Inherited from User?
 
   })
-    .then(dbPlayerData => res.json(dbPlayerData))
+    .then(dbUserData => res.json(dbUserData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -53,18 +91,18 @@ router.post("/", withAuth, (req, res) => {
 });
 
 router.post("/login", withAuth, (req, res) => {
-  Player.findOne({
+  User.findOne({
     where: {
       email: req.body.email,
     },
   })
-  .then((dbPlayerData) => {
-    if (!dbPlayerData) {
+  .then((dbUserData) => {
+    if (!dbUserData) {
       res.status(400).json({ message: "No one's bumping, setting, or spiking with that email address." });
       return;
     }
 
-    const validPassword = dbPlayerData.checkPassword(req.body.password);
+    const validPassword = dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res.status(400).json({ message: "That password is incorrect." });
@@ -73,11 +111,11 @@ router.post("/login", withAuth, (req, res) => {
 
     req.session.save(() => {
       // declare session variables
-      req.session.user_id = dbPlayerData.id;
-      req.session.username = dbPlayerData.username;
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
-      res.json({ player: dbPlayerData, message: "Bump, set, spike! You are now logged in." });
+      res.json({ user: dbUserData, message: "Bump, set, spike! You are now logged in." });
     });
   });
 });
@@ -85,18 +123,18 @@ router.post("/login", withAuth, (req, res) => {
 
 router.put("/:id", withAuth, (req, res) => {
   // pass in req.body instead to only update what's passed through
-  Player.update(req.body, {
+  User.update(req.body, {
     individualHooks: true,
     where: {
       id: req.params.id,
     },
   })
-    .then((dbPlayerData) => {
-      if (!dbPlayerData[0]) {
-        res.status(404).json({ message: "We've never seen that player before. Check your ID and try again." });
+    .then((dbUserData) => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: "We've never seen that User before. Check your ID and try again." });
         return;
       }
-      res.json(dbPlayerData);
+      res.json(dbUserData);
     })
     .catch((err) => {
       console.log(err);
@@ -105,17 +143,17 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 router.delete("/:id", withAuth, (req, res) => {
-  Player.destroy({
+  User.destroy({
     where: {
       id: req.params.id,
     },
   })
-    .then((dbPlayerData) => {
-      if (!dbPlayerData) {
-        res.status(404).json({ message: "We can't delete players who don't exist. Double-check your player ID and try again." });
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res.status(404).json({ message: "We can't delete Users who don't exist. Double-check your User ID and try again." });
         return;
       }
-      res.json(dbPlayerData);
+      res.json(dbUserData);
     })
     .catch((err) => {
       console.log(err);

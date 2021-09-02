@@ -20,7 +20,7 @@ const teamData = [
     {
         team_name: 'Ball Busters',
         code: '3333',
-        wins: '9',
+        wins: 9,
         losses: '1',
         points: '11'
     },

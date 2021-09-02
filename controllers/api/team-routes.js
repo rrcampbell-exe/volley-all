@@ -1,18 +1,19 @@
 const router = require("express").Router();
-const { Team, Game, Player } = require("../../models"); // Once associations are done, this will pull the models from models/index.js
+const { Team, Game, User } = require("../../models"); // Once associations are done, this will pull the models from models/index.js
 const withAuth = require("../../utils/auth");
 // Decide if withAuth is needed/where to put it
 
 // GET all teams
 router.get(`/`, (req, res) => {
     Team.findAll({
+        // CHANGE TEAM ON LINE ABOVE TO USER, THEN USE GROUP AS SEEN HERE: https://stackoverflow.com/questions/22627258/how-does-group-by-works-in-sequelize
         // attributes: { exclude: [`code`] }  We might need to use this?
         include: [
+            // {
+            //     model: Game, 
+            // },
             {
-                model: Game, 
-            },
-            {
-                model: Player,
+                model: User,
                 attributes: [`first_name`, `last_name` /* We could include team_id if we wanted */],
             }
         ],
@@ -35,7 +36,7 @@ router.get(`/:id`, (req, res) => {
                 // It might already be implied by the associations
             },
             {
-                model: Player,
+                model: User,
                 attributes: [`first_name`, `last_name`],
                 // Another "where" team_id: req.params.id ??
             }

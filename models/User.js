@@ -12,11 +12,19 @@ class User extends Model {
 
 User.init(
   {
-    id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
@@ -32,6 +40,19 @@ User.init(
       validate: {
         len: [4],
       },
+    },
+    team_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "team",
+        key: "team_id",
+      },
+    },
+    is_Admin: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
     },
   },
   {

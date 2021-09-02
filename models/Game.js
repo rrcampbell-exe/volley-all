@@ -6,10 +6,11 @@ class Game extends Model {}
 
 Game.init(
   {
-    id: {
+    game_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
+      allowNull: false,
     },
     date: {
       type: DataTypes.DATEONLY,
@@ -23,14 +24,14 @@ Game.init(
       type: DataTypes.INTEGER,
       references: {
         model: "team",
-        key: "id",
+        key: "team_id",
       },
     },
     away_team: {
       type: DataTypes.INTEGER,
       references: {
         model: "team",
-        key: "id",
+        key: "team_id",
       },
     },
   },

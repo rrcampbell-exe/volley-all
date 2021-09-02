@@ -1,12 +1,12 @@
-const { Player } = require('../models');
+const { User } = require('../models');
 
-const playerData = [
+const userData = [
     {
         first_name: 'Liam',
         last_name: 'Smith',
         email: 'liam@gmail.com',
         password: 'pswd12345',
-        team_id: 1
+        team_id: 1,
     },
 
     {
@@ -391,22 +391,17 @@ const playerData = [
         team_id: 8
     },
 
-    // {
-    //     first_name: 'Kyle',
-    //     last_name: 'Gomez',
-    //     email: 'kyle@gmail.com',
-    //     password: 'pswd12345'
-    // },
-
-    // {
-    //     first_name: 'Ethan',
-    //     last_name: 'Evans',
-    //     email: 'ethan@gmail.com',
-    //     password: 'pswd12345'
-    // },
+    {
+        first_name: 'Admin',
+        last_name: 'User',
+        email: 'admin@gmail.com',
+        password: 'pswd12345',
+        is_Admin: true,
+        team_id: null,
+    }
 
     
 ];
 
-const seedPlayers = () => Player.bulkCreate(playerData);
-module.exports = seedPlayers;
+const seedUsers = () => User.bulkCreate(userData);
+module.exports = seedUsers;

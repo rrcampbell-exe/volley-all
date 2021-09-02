@@ -4,7 +4,7 @@ const adminData = [
    
     {
         name: 'Billy',
-        isAdmin: true,
+        is_Admin: true,
         email: 'billy@gmail.com',
         password: 'pswd12345'
     }

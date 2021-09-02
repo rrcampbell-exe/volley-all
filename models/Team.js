@@ -1,16 +1,16 @@
 const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection");
-
 // create our Team model
 class Team extends Model {}
 
 Team.init(
   {
-    id: {
+    team_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
+      allowNull: false,
     },
     team_name: {
       type: DataTypes.STRING,

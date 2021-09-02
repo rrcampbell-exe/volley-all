@@ -1,4 +1,4 @@
-{{#if isAdmin}}
+{{#if is_Admin}}
   <section>
     <h2>Create A Team</h2>
     <form class="create-team-form">
@@ -61,7 +61,7 @@
   </section>
 {{/if }}
 
-{{#unless isAdmin}}
+{{#unless is_Admin}}
   <div>
     <h2>{{team.team_name}}</h2>
     <h3>Team Record: {{team.wins}} Wins, {{team.losses}} Losses</h3>

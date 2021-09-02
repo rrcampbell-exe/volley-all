@@ -39,7 +39,7 @@ router.get(`/`, (req, res) => {
 router.post(`/`, (req, res) => {
     Admin.create({
         name: req.body.name,
-        // isAdmin will be true by default
+        // is_Admin will be true by default
         // Does the extended User info apply here as well?
         // (first_name, last_name, email, password)
         // Or do we still have to define that in Admin.js
