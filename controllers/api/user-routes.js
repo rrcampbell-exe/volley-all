@@ -5,7 +5,7 @@ const withAuth = require("../../utils/auth");
 // GET all Users
 router.get("/", (req, res) => {
   User.findAll({
-    group: ['team_id'],
+     group: ['team_id'],
     attributes: { exclude: [`password`] }
   })
     .then(dbUserData => res.json(dbUserData))

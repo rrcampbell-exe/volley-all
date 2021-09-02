@@ -5,10 +5,12 @@ const Game = require("./Game");
 const { Model } = require("sequelize");
 
 // create associations
-Team.hasMany(User);
+Team.hasMany(User, {
+    foreignKey: 'team_id'
+});
 
 User.belongsTo(Team, {
-    foreignKey: 'team_id',
+    foreignKey: 'team_id'
 });
 
 Team.hasMany(Game, {
