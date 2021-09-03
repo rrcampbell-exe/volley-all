@@ -23,7 +23,7 @@
   </section>
   <section>
     <h2>Add A Game</h2>
-    <form>
+    <form class="create-game-form">
       <label for="home-team">Home Team</label>
       <select name="home-team" id="home-team">
         {{#each team}}
@@ -38,7 +38,7 @@
       </select>
       <label for="game-date">Game Date</label>
       <input type="date" id="game-date" name="game-date">
-      <label for="game-time">Home Team</label>
+      <label for="game-time">Game Time</label>
       <select name="game-time" id="game-time"> {{!-- Will need some JS to convert game-time values from strings to integers --}}
         <option value="6">6:00 p.m.</option>
         <option value="7">7:00 p.m.</option>
@@ -59,6 +59,12 @@
         {{/each}}
     </table>
   </section>
+  <script src="/javascript/game-create.js"></script>
+  <script src="/javascript/game-delete.js"></script>
+  <script src="/javascript/game-edit.js"></script>
+  <script src="/javascript/team-create.js"></script>
+  <script src="/javascript/team-delete.js"></script>
+  <script src="/javascript/team-edit.js"></script>
 {{/if }}
 
 {{#unless is_Admin}}
@@ -98,3 +104,6 @@
     </table>
   </section>
 {{/unless}}
+
+
+
