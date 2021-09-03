@@ -45,14 +45,8 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      alert("response okay!")
-      alert(email)
-      alert(password)
       document.location.replace("/dashboard/");
     } else {
-      alert("bad job!")
-      alert(email)
-      alert(password)
       alert(response.statusText);
     }
   }

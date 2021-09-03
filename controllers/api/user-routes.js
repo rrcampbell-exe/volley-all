@@ -110,6 +110,7 @@ router.post("/login", (req, res) => {
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
+    console.log(dbUserData)
 
     if (!validPassword) {
       res.status(400).json({ message: "That password is incorrect." });

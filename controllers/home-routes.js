@@ -3,14 +3,14 @@ const sequelize = require("../config/connection");
 const { User, Team, Game } = require("../models");
 
 router.get("/", (req, res) => {
-  if (!req.session.user_id) {
-    res.redirect("/login");
-    return;
-  } 
+  // if (!req.session.user_id) {
+  //   res.redirect("/login");
+  //   return;
+  // } 
     User.findOne({
       where: {
-        user_id: req.session.user_id,
-        // user_id: 1
+        // user_id: req.session.user_id,
+        user_id: 1
       },
       include: [Team],
     }).then((data) => {
