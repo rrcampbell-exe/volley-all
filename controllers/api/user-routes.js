@@ -32,7 +32,7 @@ router.get("/admins/", (req, res) => {
 // GET a single User by "id"
 router.get("/:id", (req, res) => {
   User.findOne({
-    attribute: { exclude: [`password`] },
+    attributes: { exclude: [`password`] },
     where: {
       user_id: req.params.id
     }

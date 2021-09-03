@@ -16,10 +16,10 @@ router.get("/", (req, res) => {
   });
 
 // GET a single game by "id"
-router.get(`/:id`, (req, res) => {
+router.get(`/:game_id`, (req, res) => {
     Game.findOne({
         where: {
-            id: req.params.id
+            game_id: req.params.game_id
         }
     })
         .then(dbGameData => {
@@ -51,11 +51,11 @@ router.post(`/`, (req, res) => {
 });
 
 // Update a game by "id"
-router.put(`/:id`, (req, res) => {
+router.put(`/:game_id`, (req, res) => {
     Game.update(
         {
             where: {
-                id: req.params.id
+                game_id: req.params.game_id
             }
         },
         {
@@ -79,10 +79,10 @@ router.put(`/:id`, (req, res) => {
 });
 
 // Delete a game
-router.delete(`/:id`, (req, res) => {
+router.delete(`/:game_id`, (req, res) => {
     Game.destroy({
         where: {
-            id: req.params.id
+            game_id: req.params.game_id
         }
     })
         .then(dbPostData => {

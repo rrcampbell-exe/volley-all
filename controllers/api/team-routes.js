@@ -14,7 +14,7 @@ router.get(`/`, (req, res) => {
             // },
             {
                 model: User,
-                attributes: [`first_name`, `last_name` /* We could include team_id if we wanted */],
+                attributes: [`first_name`, `last_name`],
             }
         ],
     })
@@ -26,15 +26,15 @@ router.get(`/`, (req, res) => {
 });
 
 // GET a single team by "id"
-router.get(`/:id`, (req, res) => {
+router.get(`/:team_id`, (req, res) => {
     Team.findOne({
         attributes: { exclude: [`code`] }, 
         include: [
-            {
-                model: Game,
-                // Do I need/Can I use a "where" home_team/away_team: req.params.id ??
-                // It might already be implied by the associations
-            },
+            // {
+            //     model: Game,
+            //     // Do I need/Can I use a "where" home_team/away_team: req.params.id ??
+            //     // It might already be implied by the associations
+            // },
             {
                 model: User,
                 attributes: [`first_name`, `last_name`],
@@ -42,7 +42,7 @@ router.get(`/:id`, (req, res) => {
             }
         ],
         where: {
-            id: req.params.id
+            team_id: req.params.team_id
         }
     })
         .then(dbUserData => {
@@ -73,7 +73,7 @@ router.post(`/`, (req, res) => {
 });
 
 // Update a team
-router.put(`/:id`, (req, res) => {
+router.put(`/:team_id`, (req, res) => {
     Team.update(
         {
             team_name: req.body.team_name,
@@ -84,7 +84,7 @@ router.put(`/:id`, (req, res) => {
         },
         {
             where: {
-                id: req.params.id
+                team_id: req.params.team_id
             }
         }
     )
@@ -102,10 +102,10 @@ router.put(`/:id`, (req, res) => {
 });
 
 // Delete a team
-router.delete(`/:id`, (req, res) => {
+router.delete(`/:team_id`, (req, res) => {
     Team.destroy({
         where: {
-            id: req.params.id
+            team_id: req.params.team_id
         }
     })
         .then(dbTeamData => {
