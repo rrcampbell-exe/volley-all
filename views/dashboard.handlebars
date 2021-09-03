@@ -89,9 +89,8 @@
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Email</th>
         </tr>
-        {{#each team.users}}
+        {{#each team.users}} {{!-- consider this for iterating over array of objects where users info is contained: https://stackoverflow.com/questions/22696886/how-to-iterate-over-array-of-objects-in-handlebars --}}
         <tr>
             {{> player-info}}
         </tr>
