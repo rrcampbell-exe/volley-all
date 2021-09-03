@@ -117,7 +117,6 @@ router.post("/login", (req, res) => {
     //   console.log("That password is incorrect.");
     //   return;
     // }
-
     req.session.save(() => {
       req.session.user_id = dbUserData.user_id;
       req.session.email = dbUserData.email;
