@@ -3,7 +3,7 @@ const sequelize = require("../config/connection");
 const { User, Team, Game } = require("../models");
 
 router.get("/", (req, res) => {
-  if (!req.session.user_id) {
+  if (!req.session.loggedIn) {
     res.redirect("/login");
     return;
   } 
