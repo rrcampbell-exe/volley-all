@@ -3,6 +3,8 @@
 <td>{{home_team}}</td> 
 <td>{{home_team.points}}</td> 
 <td>{{dataValues.team.dataValues.team_name}}</td> 
-<td>{{dataValues.team.dataValues.points}}</td>       
+<td>{{dataValues.team.dataValues.points}}</td>
+{{#if is_Admin}}       
 <td><button><a href="/dashboard/edit/{{dataValues.game_id}}" class="edit-link">Edit Game</a></button></td>
 <td><button class="game-delete-btn">Delete Game</button></td>
+{{/if}}
