@@ -2,14 +2,14 @@ async function teamCreateHandler(event) {
   event.preventDefault();
 
   const team_name = document.querySelector("#team-name").value.trim();
-  const team_code = document.querySelector("#team-code").value.trim();
+  const code = document.querySelector("#team-code").value.trim();
 
-  if (team_name && team_code) {
+  if (team_name && code) {
     const response = await fetch("/api/teams/", {
       method: "post",
       body: JSON.stringify({
         team_name,
-        team_code
+        code
       }),
       headers: { "Content-Type": "application/json"},
     });
