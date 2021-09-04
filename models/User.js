@@ -62,10 +62,7 @@ User.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-      // async beforeBulkCreate(seededUserData) {
-      //   seededUserData.password = await bcrypt.hash(seededUserData.password, 10);
-      //   return seededUserData;
-      // },
+    
       // set up beforeUpdate lifecycle "hook" functionality
       async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(
