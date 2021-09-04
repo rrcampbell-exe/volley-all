@@ -1,37 +1,40 @@
-async function signupFormHandler(event) {
+function signupFormHandler(event) {
   event.preventDefault();
-
+  
   const first_name = document.querySelector("#first-name-signup").value.trim();
   const last_name = document.querySelector("#last-name-signup").value.trim();
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
   const team_code = document.querySelector("#team-code-signup").value.trim();
-  let team_id;
 
-  // TODO:
-  // fetch data from api/teams
   fetch("/api/teams/")
     .then((res) => res.json())
     .then((teamData) => {
       console.log(teamData);
+      console.log(team_code);
       // compare team_code to all codes
       for (let i = 0; i < teamData.length; i++) {
         if (team_code == teamData[i].code) {
           // goal is to take team_id where team_code matches and reassign team_id to this team's team_id
-          console.log(teamData[i].team_id);
           team_id = teamData[i].team_id;
-          console.log(team_id)
-          return team_id;
-        } else {
-          alert("We have no record of that team code. Please double check your entry and try again.")
-          return
+          console.log(team_id);
+          signUpCompletion(first_name, last_name, email, password, team_id);
+          return;
         }
       }
     });
+}
 
-// may need to move the above into if-statement as part of fetch request
+async function signUpCompletion(
+  first_name,
+  last_name,
+  email,
+  password,
+  team_id
+) {
 
   if (first_name && last_name && email && password && team_id) {
+    console.log(team_id);
     const response = await fetch("/api/users/", {
       method: "post",
       body: JSON.stringify({
@@ -45,13 +48,13 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
-      window.location.replace("/");
+      alert("You have registered successfully. Please use your credentials to log in.")
+      window.location.replace("/login");
     } else {
       alert(response.statusText);
     }
   }
 }
-
 async function loginFormHandler(event) {
   event.preventDefault();
 
@@ -83,3 +86,4 @@ document
 document
   .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
+
