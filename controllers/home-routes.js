@@ -15,7 +15,9 @@ router.get("/", (req, res) => {
     },
     include: [Team],
   }).then((data) => {
+    // checking if user is admin or player
     if (data.dataValues.team_id === null) {
+      // if admin, then pull all team info to display
       Team.findAll({
 
       }).then((teamInfo) => {
@@ -29,6 +31,7 @@ router.get("/", (req, res) => {
         return;
       })
     } else {
+      // logging in as player
       User.findAll({
         where: {
           team_id: data.dataValues.team_id
@@ -58,6 +61,7 @@ router.get("/", (req, res) => {
             loggedIn: req.session.loggedIn,
             is_Admin: adminBool,
             team: teamInfo,
+            user: rosterData
           });
         });
       });
