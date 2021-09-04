@@ -5,7 +5,6 @@ const withAuth = require("../../utils/auth");
 // GET all Users
 router.get("/", (req, res) => {
   User.findAll({
-    //  group: ['team_id'],
     attributes: { exclude: [`password`] }
   })
     .then(dbUserData => res.json(dbUserData))
@@ -33,7 +32,7 @@ router.get("/admins/", (req, res) => {
 // GET a single User by "id"
 router.get("/:id", (req, res) => {
   User.findOne({
-    attribute: { exclude: [`password`] },
+    attributes: { exclude: [`password`] },
     where: {
       user_id: req.params.id
     }
@@ -74,23 +73,30 @@ router.get("/admins/:id", (req, res) => {
 });
 
 // Create a User
-router.post("/", withAuth, (req, res) => {
+router.post("/", (req, res) => {
   User.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     team_id: req.body.team_id,
-    email: req.body.email, // Inherited from User?
-    password: req.body.password // Inherited from User?
-
+    email: req.body.email, 
+    password: req.body.password 
   })
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+  .then(dbUserData => {
+    req.session.save(() => {
+      req.session.user_id = dbUserData.user_id;
+      req.session.email = dbUserData.email;
+      req.session.loggedIn = true;
+
+      res.json(dbUserData);
     });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
-router.post("/login", withAuth, (req, res) => {
+router.post("/login", (req, res) => {
   User.findOne({
     where: {
       email: req.body.email,
@@ -99,23 +105,25 @@ router.post("/login", withAuth, (req, res) => {
   .then((dbUserData) => {
     if (!dbUserData) {
       res.status(400).json({ message: "No one's bumping, setting, or spiking with that email address." });
+      console.log("No one's bumping, setting, or spiking with that email address.");
       return;
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
+    console.log(dbUserData)
 
     if (!validPassword) {
       res.status(400).json({ message: "That password is incorrect." });
+      console.log("That password is incorrect.");
       return;
     }
-
     req.session.save(() => {
-      // declare session variables
       req.session.user_id = dbUserData.user_id;
       req.session.email = dbUserData.email;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: "Bump, set, spike! You are now logged in." });
+      console.log("Bump, set, spike! You are now logged in.");
     });
   });
 });
