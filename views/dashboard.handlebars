@@ -27,19 +27,19 @@
       <label for="home-team">Home Team</label>
       <select name="home-team" id="home-team">
         {{#each team}}
-          <option value="{{team.team_name}}">{{team.team_name}}</option>
+          <option value="{{dataValues.team_name}}">{{dataValues.team_name}}</option>
         {{/each}}
       </select>
       <label for="away-team">Away Team</label>
       <select name="away-team" id="away-team">
         {{#each team}}
-          <option value="{{team_name}}">{{team_name}}</option>
+          <option value="{{dataValues.team_name}}">{{dataValues.team_name}}</option>
         {{/each}}
       </select>
       <label for="game-date">Game Date</label>
       <input type="date" id="game-date" name="game-date">
       <label for="game-time">Game Time</label>
-      <select name="game-time" id="game-time"> {{!-- Will need some JS to convert game-time values from strings to integers --}}
+      <select name="game-time" id="game-time"> 
         <option value="6">6:00 p.m.</option>
         <option value="7">7:00 p.m.</option>
         <option value="8">8:00 p.m.</option>
