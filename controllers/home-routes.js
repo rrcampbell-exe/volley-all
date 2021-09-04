@@ -16,12 +16,18 @@ router.get("/", (req, res) => {
     include: [Team],
   }).then((data) => {
     if (data.dataValues.team_id === null) {
-      let adminBool = data.dataValues.is_Admin;
-      res.render("dashboard", {
-        loggedIn: req.session.loggedIn,
-        is_Admin: adminBool,
-      });
-      return;
+      Team.findAll({
+
+      }).then((teamInfo) => {
+        console.log(teamInfo)
+        let adminBool = data.dataValues.is_Admin;
+        res.render("dashboard", {
+          loggedIn: req.session.loggedIn,
+          is_Admin: adminBool,
+          team: teamInfo
+        });
+        return;
+      })
     } else {
       User.findAll({
         where: {
