@@ -11,19 +11,30 @@
         </tr>
       </table>
     <h2>Edit Game</h2>
-    <form>
+    <form id = 'edit-game-form'>
       <label for="home-team">Home Team</label>
       <select name="home-team" id="home-team">
         {{#each team}}
           <option value="{{team.name}}">{{team.name}}</option>
         {{/each}}
       </select>
+{{!-- <script type="text/handlebar-template" id="selectHomeTemplate">
+<span>Select the home team: </span>
+<select id="person">
+{{#each people}}
+	<option value="{{id}}">{{firstName}} {{lastName}}</option>
+{{/each}}
+</select>
+</script> --}}
+
       <label for="away-team">Away Team</label>
       <select name="away-team" id="away-team">
         {{#each team}}
           <option value="{{team.name}}">{{team.name}}</option>
         {{/each}}
       </select>
+
+
       <label for="game-date">Game Date</label>
       <input type="date" id="game-date" name="game-date" value="{{date}}">
       <label for="game-time">Game Time</label>
@@ -33,6 +44,8 @@
         <option value="8">8:00 p.m.</option>
         <option value="9">9:00 p.m.</option>
       </select>
+
+
       <button type="submit">Add Game</button> 
     </form>
   </section>

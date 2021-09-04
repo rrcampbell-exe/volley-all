@@ -16,7 +16,7 @@
         <li>
           {{> team-info }}
           <a href="/dashboard/edit/{{team.team_id}}" class="edit-link">Edit Team</a>
-          <button class="team-delete-btn">Delete Team</button>
+          <button class="team-delete-btn"><span class="material-icons-outlined">delete</span></button>
         </li>
       {{/each}}
     </ul>
@@ -95,6 +95,8 @@
   </section>
 {{/unless}}
 
+
+{{#if is_Admin}}
 <section>
     <h2>League Schedule</h2>
     <table>
@@ -102,8 +104,14 @@
         {{#each game}}
           <tr>
             {{> game-partial}}
+            <button id='game-delete'>
+                <span class="material-icons-outlined">delete</span>
+            </button>
+            <button id='game-edit'>
+                <span class="material-icons-outlined">edit</span>
+            </button>
           </tr>
         {{/each}}
     </table>
   </section>
-
+{{/if }}
