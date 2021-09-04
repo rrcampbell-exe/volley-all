@@ -46,7 +46,7 @@ async function loginFormHandler(event) {
 
     if (response.ok) {
       alert("response okay!")
-      document.location.replace("/dashboard/");
+      document.location.replace("/dashboard");
     } else {
       alert("bad job!")
       alert(response.statusText);
