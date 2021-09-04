@@ -48,17 +48,6 @@
       <button type="submit">Add Game</button> 
     </form>
   </section>
-  <section>
-    <h2>League Schedule</h2>
-    <table>
-      {{> game-table-header}}
-        {{#each game}}
-          <tr>
-            {{> game-partial}}
-          </tr>
-        {{/each}}
-    </table>
-  </section>
   <script src="/javascript/game-create.js"></script>
   <script src="/javascript/game-delete.js"></script>
   <script src="/javascript/game-edit.js"></script>
@@ -105,4 +94,16 @@
     </table>
   </section>
 {{/unless}}
+
+<section>
+    <h2>League Schedule</h2>
+    <table>
+      {{> game-table-header}}
+        {{#each game}}
+          <tr>
+            {{> game-partial}}
+          </tr>
+        {{/each}}
+    </table>
+  </section>
 

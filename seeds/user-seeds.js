@@ -400,8 +400,8 @@ const userData = [
         team_id: null,
     }
 
-    
 ];
 
-const seedUsers = () => User.bulkCreate(userData);
+
+const seedUsers = () => User.bulkCreate(userData, {individualHooks: true});
 module.exports = seedUsers;
