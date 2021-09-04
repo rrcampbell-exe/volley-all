@@ -17,18 +17,24 @@ router.get("/", (req, res) => {
   }).then((data) => {
     // checking if user is admin or player
     if (data.dataValues.team_id === null) {
-      // if admin, then pull all team info to display
-      Team.findAll({
+      Game.findAll({
 
-      }).then((teamInfo) => {
-        console.log(teamInfo)
-        let adminBool = data.dataValues.is_Admin;
-        res.render("dashboard", {
-          loggedIn: req.session.loggedIn,
-          is_Admin: adminBool,
-          team: teamInfo
-        });
-        return;
+      }).then((gameInfo) => {
+        console.log(gameInfo)
+        // if admin, then pull all team info to display
+        Team.findAll({
+  
+        }).then((teamInfo) => {
+          // console.log(teamInfo)
+          let adminBool = data.dataValues.is_Admin;
+          res.render("dashboard", {
+            loggedIn: req.session.loggedIn,
+            is_Admin: adminBool,
+            team: teamInfo,
+            game: gameInfo
+          });
+          return;
+        })
       })
     } else {
       // logging in as player
