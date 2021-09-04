@@ -5,9 +5,33 @@ async function signupFormHandler(event) {
   const last_name = document.querySelector("#last-name-signup").value.trim();
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
-  const team_code = document.querySelector("#team-code").value.trim();
+  const team_code = document.querySelector("#team-code-signup").value.trim();
+  let team_id;
 
-  if (first_name && last_name && email && password && team_code) {
+  // TODO:
+  // fetch data from api/teams
+  fetch("/api/teams/")
+    .then((res) => res.json())
+    .then((teamData) => {
+      console.log(teamData);
+      // compare team_code to all codes
+      for (let i = 0; i < teamData.length; i++) {
+        if (team_code == teamData[i].code) {
+          // goal is to take team_id where team_code matches and reassign team_id to this team's team_id
+          console.log(teamData[i].team_id);
+          team_id = teamData[i].team_id;
+          console.log(team_id)
+          return team_id;
+        } else {
+          alert("We have no record of that team code. Please double check your entry and try again.")
+          return
+        }
+      }
+    });
+
+// may need to move the above into if-statement as part of fetch request
+
+  if (first_name && last_name && email && password && team_id) {
     const response = await fetch("/api/users/", {
       method: "post",
       body: JSON.stringify({
@@ -15,7 +39,7 @@ async function signupFormHandler(event) {
         last_name,
         email,
         password,
-        team_code,
+        team_id,
       }),
       headers: { "Content-Type": "application/json" },
     });
