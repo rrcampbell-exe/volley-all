@@ -42,7 +42,7 @@ const teamData = [
     },
 
     {
-        team_name: 'We Always Get It Up',
+        team_name: 'Bump, Set, Who Spiked the Punch?',
         code: '5555',
         wins: '19',
         losses: '3',
