@@ -8,8 +8,8 @@ class Team extends Model {}
 Team.init(
   {
     team_id: {
-      type: DataTypes.STRING,
-      defaultValue: uuidv4(),
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
     },
     team_name: {

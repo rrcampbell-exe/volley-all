@@ -1,4 +1,4 @@
-async function deleteFormHandler(event) {
+async function gameDeleteFormHandler(event) {
   event.preventDefault();
 
   const id = event.target.id
@@ -15,5 +15,5 @@ async function deleteFormHandler(event) {
 }
 
 document
-  .querySelector(".game-delete-btn")
-  .addEventListener("click", deleteFormHandler);
+  .querySelectorAll(".game-delete-btn")
+  .addEventListener("click", gameDeleteFormHandler);

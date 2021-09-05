@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { UUIDV4 } = require("sequelize");
 const { Team, Game, User } = require("../../models"); // Once associations are done, this will pull the models from models/index.js
 const withAuth = require("../../utils/auth");
 // Decide if withAuth is needed/where to put it
@@ -62,8 +63,7 @@ router.get(`/:team_id`, (req, res) => {
 router.post(`/`, (req, res) => {
     Team.create({
         team_name: req.body.team_name,
-        code: req.body.code // Is a team code required on creation?
-        // Wins/losses/points will default to zero
+        code: req.body.code,
     })
         .then(dbTeamData => res.json(dbTeamData))
         .catch(err => {
