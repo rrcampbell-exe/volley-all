@@ -33,7 +33,7 @@ router.get("/", (req, res) => {
             },
           }).then((rosterData) => {
             Game.findAll({
-              order: [["date", "ASC"]],
+              order: [["date", "ASC"], ["time", "ASC"]],
               where: {
                 [Op.or]: [
                   { home_team: userData.dataValues.team_name },
@@ -57,7 +57,7 @@ router.get("/", (req, res) => {
         });
       } else {
         Game.findAll({
-          order: [["date", "ASC"]],
+          order: [["date", "ASC"], ["time", "ASC"]],
         }).then((gameInfo) => {
           console.log(gameInfo);
           let adminBool = userData.dataValues.is_Admin;
