@@ -25,13 +25,13 @@
     <h2>Add A Game</h2>
     <form class="create-game-form">
       <label for="home-team">Home Team</label>
-        <select name="home-team" id="home-team">
+        <select name="home-team" id="home-team" class="browser-default">
           {{#each team}}
             <option value="{{dataValues.team_name}}">{{dataValues.team_name}}</option>
           {{/each}}
         </select>
       <label for="away-team">Away Team</label>
-        <select name="away-team" id="away-team">
+        <select name="away-team" id="away-team" class="browser-default">
           {{#each team}}
             <option value="{{dataValues.team_name}}">{{dataValues.team_name}}</option>
           {{/each}}
@@ -39,7 +39,7 @@
       <label for="game-date">Game Date</label>
       <input type="date" id="game-date" name="game-date">
       <label for="game-time">Game Time</label>
-      <select name="game-time" id="game-time"> 
+      <select name="game-time" id="game-time" class="browser-default"> 
         <option value="6">6:00 p.m.</option>
         <option value="7">7:00 p.m.</option>
         <option value="8">8:00 p.m.</option>
