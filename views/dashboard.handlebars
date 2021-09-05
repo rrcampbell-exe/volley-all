@@ -1,6 +1,6 @@
 {{#if is_Admin}}
-  <section>
-    <h2>Create A Team</h2>
+  <section data-aos="slide-right" data-aos-duration="500">
+    <h2 >Create A Team</h2>
     <form class="create-team-form">
       <label for="team-name">Team Name</label>
       <input type="text" name="team-name" id="team-name">
@@ -9,7 +9,7 @@
       <button type="submit">Create Team</button>
     </form>
   </section>
-  <section>
+  <section data-aos="slide-left" data-aos-duration="500">
     <h2>Current Team List</h2>
     <ul>
       {{#each team}}
@@ -21,7 +21,7 @@
       {{/each}}
     </ul>
   </section>
-  <section>
+  <section data-aos="fade-in" data-aos-duration="1000">
     <h2>Add A Game</h2>
     <form class="create-game-form">
       <label for="home-team">Home Team</label>
@@ -48,13 +48,15 @@
       <button type="submit">Add Game</button> 
     </form>
   </section>
-  <section>
+  <section data-aos="fade-up" data-aos-duration="500">
     <h2>League Schedule</h2>
     <table>
       {{> game-table-header}}
         {{#each game}}
           <tr>
-            {{> game-partial}}
+            {{> game-partial}}    
+            <td><button><a href="/dashboard/edit/{{dataValues.game_id}}" class="edit-link">Edit Game</a></button></td>
+            <td><button class="game-delete-btn">Delete Game</button></td>
           </tr>
         {{/each}}
     </table>
@@ -68,11 +70,11 @@
 {{/if }}
 
 {{#unless is_Admin}}
-  <div>
+  <div data-aos="fade-up" data-aos-duration="1000">
     <h2>{{team.team_name}}</h2>
     <p>Team Record: {{team.wins}} Wins, {{team.losses}} Losses ({{team.points}} points)</p>
   </div>
-  <section>
+  <section data-aos="slide-right" data-aos-duration="1000">
     <h2>Team Schedule</h2>
     <table>
       {{> game-table-header}}
@@ -89,7 +91,7 @@
     </section>
   {{/unless}}
 
-  <section>
+  <section data-aos="fade-up" data-aos-duration="1000">
     <h2>{{team.team_name}} Roster</h2>
     <table>
         <tr>
@@ -97,7 +99,7 @@
             <th>Last Name</th>
             <th>Email</th>
         </tr>
-        {{#each user}} {{!-- consider this for iterating over array of objects where users info is contained: https://stackoverflow.com/questions/22696886/how-to-iterate-over-array-of-objects-in-handlebars --}}
+        {{#each user}} 
         <tr>
             {{> player-info}}
         </tr>

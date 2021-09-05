@@ -48,7 +48,9 @@ router.get("/", (req, res) => {
               { away_team: data.dataValues.team.dataValues.team_id },
             ],
           },
-          include: [Team],
+          include: [
+            {model: Team,
+            attributes: ['team_name'],}]
         }).then((gameData) => {
           let adminBool = data.dataValues_is_Admin;
           let teamInfo = data.dataValues.team.dataValues;
