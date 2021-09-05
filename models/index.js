@@ -14,11 +14,11 @@ User.belongsTo(Team, {
 });
 
 Team.hasMany(Game, {
-    foreignKey: 'game_id'
+    foreignKey: 'home_team'
 });
 
 Game.belongsTo(Team, {
-    foreignKey: 'away_team'
+    foreignKey: 'home_team'
 })
 module.exports = { User, Team, Game }
 

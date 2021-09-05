@@ -62,10 +62,6 @@ User.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-<<<<<<< HEAD
-    
-=======
->>>>>>> 306e3d3950943f5c702b16d712fdbe4ca3d41136
       // set up beforeUpdate lifecycle "hook" functionality
       async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(
