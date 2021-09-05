@@ -77,7 +77,7 @@ router.post("/", (req, res) => {
   User.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
-    team_id: req.body.team_id,
+    team_name: req.body.team_name,
     email: req.body.email, 
     password: req.body.password 
   })
@@ -122,7 +122,7 @@ router.post("/login", (req, res) => {
       req.session.email = dbUserData.email;
       req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: "Bump, set, spike! You are now logged in." });
+      res.json({ ok: true, user: dbUserData, message: "Bump, set, spike! You are now logged in." });
       console.log("Bump, set, spike! You are now logged in.");
     });
   });

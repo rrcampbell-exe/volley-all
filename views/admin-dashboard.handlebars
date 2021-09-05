@@ -1,4 +1,3 @@
-{{#if is_Admin}}
   <section data-aos="slide-right" data-aos-duration="500">
     <h2 >Create A Team</h2>
     <form class="create-team-form">
@@ -73,59 +72,3 @@
   <script src="/javascript/team-create.js"></script>
   <script src="/javascript/team-delete.js"></script>
   <script src="/javascript/team-edit.js"></script>
-{{/if }}
-
-{{#unless is_Admin}}
-  <div data-aos="fade-up" data-aos-duration="1000">
-    <h2>{{user_team.team_name}}</h2>
-    <p>Team Record: {{user_team.wins}} Wins, {{user_team.losses}} Losses ({{user_team.points}} points)</p>
-  </div>
-  <section data-aos="slide-right" data-aos-duration="1000">
-    <h2>Team Schedule</h2>
-    <table>
-      {{> game-table-header}}
-        {{#each user_team.game}}
-        <tr>
-          {{> game-partial}}
-        </tr>
-        {{/each}}
-    </table>
-  </section>
-  {{#unless user_team.game}}
-    <section>
-      <p>There are no scheduled games at this time.</p>
-    </section>
-  {{/unless}}
-
-  <section data-aos="slide-left" data-aos-duration="500">
-    <h2>League Standings</h2>
-    <table>
-      <tr>
-        <th>Team Name</th>
-        <th>Points</th>
-      </tr>
-      {{#each team}}
-        <tr>
-          {{> team-info }}
-        </tr>
-      {{/each}}
-    </table>
-  </section>
-
-  <section data-aos="fade-up" data-aos-duration="1000">
-    <h2>{{user_team.team_name}} Roster</h2>
-    <table>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-        </tr>
-        {{#each user}} 
-        <tr>
-            {{> player-info}}
-        </tr>
-        {{/each}}
-    </table>
-  </section>
-{{/unless}}
-

@@ -23,17 +23,17 @@ Game.init(
       allowNull: false,
     },
     home_team: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       references: {
         model: "team",
-        key: "team_id",
+        key: "team_name",
       },
     },
     away_team: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       references: {
         model: "team",
-        key: "team_id",
+        key: "team_name",
       },
     },
   },
