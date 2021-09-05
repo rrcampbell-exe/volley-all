@@ -11,15 +11,21 @@
   </section>
   <section data-aos="slide-left" data-aos-duration="500">
     <h2>Current Team List</h2>
-    <ul>
+    <table>
+      <tr>
+        <th>Team Name</th>
+        <th>Points</th>
+        <th>Team Code</th>
+      </tr>
       {{#each team}}
-        <li>
+        <tr>
           {{> team-info }}
-          <a href="/dashboard/edit/{{team.team_id}}" class="edit-link">Edit Team</a>
-          <button class="team-delete-btn">Delete Team</button>
-        </li>
+          <td>{{dataValues.code}}</td>
+          <td><button><a href="/dashboard/edit/{{team.team_id}}" class="edit-link">Edit Team</a></button></td>
+          <td><button class="team-delete-btn">Delete Team</button></td>
+        </tr>
       {{/each}}
-    </ul>
+    </table>
   </section>
   <section data-aos="fade-in" data-aos-duration="1000">
     <h2>Add A Game</h2>
