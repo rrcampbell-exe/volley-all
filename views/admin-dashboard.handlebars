@@ -61,7 +61,7 @@
           <tr>
             {{> game-partial}}    
             <td><button><a href="/dashboard/edit/{{dataValues.game_id}}" class="edit-link">Edit Game</a></button></td>
-            <td><button class="game-delete-btn">Delete Game</button></td>
+            <td><button class="game-delete-btn" id={{dataValues.game_id}}>Delete Game</button></td>
           </tr>
         {{/each}}
     </table>
