@@ -13,6 +13,8 @@
     <table id="league-standings">
       <tr>
         <th>Team Name</th>
+        <th>Wins</th>
+        <th>Losses</th>
         <th>Points</th>
         <th>Team Code</th>
       </tr>
@@ -60,7 +62,6 @@
         {{#each game}}
           <tr>
             {{> game-partial}}    
-            <td><button><a href="/dashboard/edit/{{dataValues.game_id}}" class="edit-link">Edit Game</a></button></td>
             <td><button class="game-delete-btn" id={{dataValues.game_id}}>Delete Game</button></td>
           </tr>
         {{/each}}
