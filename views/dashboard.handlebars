@@ -11,35 +11,41 @@
   </section>
   <section data-aos="slide-left" data-aos-duration="500">
     <h2>Current Team List</h2>
-    <ul>
+    <table>
+      <tr>
+        <th>Team Name</th>
+        <th>Points</th>
+        <th>Team Code</th>
+      </tr>
       {{#each team}}
-        <li>
+        <tr>
           {{> team-info }}
-          <a href="/dashboard/edit/{{team.team_id}}" class="edit-link">Edit Team</a>
-          <button class="team-delete-btn">Delete Team</button>
-        </li>
+          <td>{{dataValues.code}}</td>
+          <td><button><a href="/dashboard/edit/{{team.team_id}}" class="edit-link">Edit Team</a></button></td>
+          <td><button class="team-delete-btn">Delete Team</button></td>
+        </tr>
       {{/each}}
-    </ul>
+    </table>
   </section>
   <section data-aos="fade-in" data-aos-duration="1000">
     <h2>Add A Game</h2>
     <form class="create-game-form">
       <label for="home-team">Home Team</label>
-      <select name="home-team" id="home-team">
-        {{#each team}}
-          <option value="{{dataValues.team_name}}">{{dataValues.team_name}}</option>
-        {{/each}}
-      </select>
+        <select name="home-team" id="home-team" class="browser-default">
+          {{#each team}}
+            <option value="{{dataValues.team_name}}">{{dataValues.team_name}}</option>
+          {{/each}}
+        </select>
       <label for="away-team">Away Team</label>
-      <select name="away-team" id="away-team">
-        {{#each team}}
-          <option value="{{dataValues.team_name}}">{{dataValues.team_name}}</option>
-        {{/each}}
-      </select>
+        <select name="away-team" id="away-team" class="browser-default">
+          {{#each team}}
+            <option value="{{dataValues.team_name}}">{{dataValues.team_name}}</option>
+          {{/each}}
+        </select>
       <label for="game-date">Game Date</label>
       <input type="date" id="game-date" name="game-date">
       <label for="game-time">Game Time</label>
-      <select name="game-time" id="game-time"> 
+      <select name="game-time" id="game-time" class="browser-default"> 
         <option value="6">6:00 p.m.</option>
         <option value="7">7:00 p.m.</option>
         <option value="8">8:00 p.m.</option>

@@ -6,7 +6,9 @@ const teamData = [
         code: '1111',
         wins: '10',
         losses: '2',
-        points: '25'
+        get points() {
+            return this.wins * 3
+        }
     },
 
     {
@@ -14,7 +16,9 @@ const teamData = [
         code: '2222',
         wins: '7',
         losses: '5',
-        points: '18'
+        get points() {
+            return this.wins * 3
+        }
     },
 
     {
@@ -22,7 +26,9 @@ const teamData = [
         code: '3333',
         wins: 9,
         losses: '1',
-        points: '11'
+        get points() {
+            return this.wins * 3
+        }
     },
 
     {
@@ -30,15 +36,19 @@ const teamData = [
         code: '4444',
         wins: '15',
         losses: '5',
-        points: '31'
+        get points() {
+            return this.wins * 3
+        }
     },
 
     {
-        team_name: 'We Always Get It Up',
+        team_name: 'The Empire Spikes Back',
         code: '5555',
         wins: '19',
         losses: '3',
-        points: '35'
+        get points() {
+            return this.wins * 3
+        }
     },
 
     {
@@ -46,7 +56,9 @@ const teamData = [
         code: '6666',
         wins: '6',
         losses: '3',
-        points: '10'
+        get points() {
+            return this.wins * 3
+        }
     },
 
     {
@@ -54,7 +66,9 @@ const teamData = [
         code: '7777',
         wins: '17',
         losses: '7',
-        points: '24'
+        get points() {
+            return this.wins * 3
+        }
     },
 
     {
@@ -62,7 +76,9 @@ const teamData = [
         code: '8888',
         wins: '13',
         losses: '9',
-        points: '20'
+        get points() {
+            return this.wins * 3
+        }
     }
 
 ];

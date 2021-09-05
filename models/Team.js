@@ -33,7 +33,11 @@ Team.init(
     points: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      defaultValue: 0
+      defaultValue: 0,
+      get() {
+        const rawValue = this.getDataValue(points);
+        return rawValue ? (this.wins * 3) : 0
+      }
     },
   },
   {
