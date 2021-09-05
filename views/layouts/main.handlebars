@@ -3,19 +3,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Volley-All</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="icon" href="https://fav.farm/🏐" />
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1>
-          🏐 <a href="/">Volley-All</a>
+        <h1 data-aos="flip-up" data-aos-duration="1000">
+          🏐
+          <a href="/">Volley-All</a>
         </h1>
-        <nav>
+        <nav data-aos="fade-in" data-aos-duration="1500">
           {{#if loggedIn}}
-            <a href="/dashboard"><button id="dashboard" class="btn-no-style">dashboard</button></a>
+            <a href="/"><button id="dashboard" class="btn-no-style">dashboard</button></a>
             <button id="logout" class="btn-no-style">logout</button>
           {{else}}
             <a href="/login">login</a>
@@ -29,6 +32,10 @@
         <a href="https://github.com/rrcampbell-exe/volley-all" target="_blank">Bump, set, and spike with us on GitHub.</a>
       </footer>
     </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
     {{/if}}
