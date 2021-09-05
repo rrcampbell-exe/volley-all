@@ -47,7 +47,7 @@ const teamData = [
         wins: '19',
         losses: '3',
         get points() {
-            this.wins * 3
+            return this.wins * 3
         }
     },
 
