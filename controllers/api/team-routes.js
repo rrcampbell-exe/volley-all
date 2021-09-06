@@ -80,7 +80,6 @@ router.put(`/:team_id`, (req, res) => {
             code: req.body.code,
             wins: req.body.wins,
             losses: req.body.losses,
-            points: req.body.points
         },
         {
             where: {

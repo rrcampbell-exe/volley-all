@@ -3,7 +3,7 @@ const sequelize = require("../config/connection");
 const { User, Team, Game } = require("../models");
 const { Op } = require("sequelize");
 
-// IF/ELSE TO HANDLE ADMIN LOGINS
+// IF/ELSE TO HANDLE ADMIN VS PLAYER LOGINS
 
 router.get("/", (req, res) => {
   // check if user is logged in: if not, send to login page
@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
   }
   // if user is logged in, find Team data
   Team.findAll({
-    order: [["points", "DESC"]],
+    order: [["wins", "DESC"]],
   }).then((teamInfo) => {
     // find the specific user who is trying to login
     User.findOne({

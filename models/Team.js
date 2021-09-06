@@ -31,16 +31,6 @@ Team.init(
       allowNull: true,
       defaultValue: 0
     },
-    points: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 0,
-      get() {
-        let points
-        const rawValue = this.getDataValue(points);
-        return rawValue ? (this.wins * 3) : 0
-      }
-    },
   },
   {
     sequelize,

@@ -1,7 +1,10 @@
+<div>
+  <h2>Welcome, {{user.dataValues.first_name}}!</h2>
+</div>
 <div data-aos="fade-up" data-aos-duration="1000">
     <h2>{{user_team.dataValues.team_name}}</h2>
-    <p>Team Record: {{user_team.dataValues.wins}} Wins, {{user_team.dataValues.losses}} Losses ({{user_team.dataValues.points}} points)</p>
-  </div>
+    <p>Team Record: {{user_team.dataValues.wins}} Wins, {{user_team.dataValues.losses}} Losses</p>
+</div>
   <section data-aos="slide-right" data-aos-duration="1000">
     <h2>Team Schedule</h2>
     <table>
@@ -24,7 +27,8 @@
     <table>
       <tr>
         <th>Team Name</th>
-        <th>Points</th>
+        <th>Wins</th>
+        <th>Losses</th>
       </tr>
       {{#each teams}}
         <tr>
