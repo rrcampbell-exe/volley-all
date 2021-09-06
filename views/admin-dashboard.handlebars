@@ -21,7 +21,28 @@
         <tr>
           {{> team-info }}
           <td>{{dataValues.code}}</td>
-          <td><button><a href="/dashboard/edit/{{dataValues.team_id}}" class="edit-link">Edit Team</a></button></td>
+          <td><button data-target="modal1" class="team-edit-btn btn modal-trigger" id="edit{{dataValues.team_id}}"></button></td>
+          <!-- Modal Structure -->
+                  <div id="modal1" class="modal">
+                          <div class="modal-content">
+                            <h4>Edit {{dataValues.team_name}}</h4>
+                            
+                                <a class='dropdown-trigger btn' href='#' data-target='dropdownTime'>Time</a>
+                                <!-- Dropdown Structure -->
+                                  <ul id='dropdownTime' class='dropdown-content'>
+                                    <li><a href="#!">6 pm</a></li>
+                                    <li><a href="#!">7 pm</a></li>
+                                    <li><a href="#!">8 pm</a></li>
+                                    <li><a href="#!">9 pm</a></li>
+                                    {{!-- <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                                    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li> --}}
+                                  </ul>
+
+                          </div>
+                          <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                          </div>
+                  </div>
           <td><button class="team-delete-btn" id="{{dataValues.team_id}}">Delete Team</button></td>
         </tr>
       {{/each}}
