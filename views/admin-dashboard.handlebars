@@ -21,22 +21,42 @@
         <tr>
           {{> team-info }}
           <td>{{dataValues.code}}</td>
-          <td><button data-target="modal1" class="team-edit-btn btn modal-trigger" id="edit{{dataValues.team_id}}"></button></td>
+          <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modal1"   id="edit{{dataValues.team_id}}"></button></td>
           <!-- Modal Structure -->
-                  <div id="modal1" class="modal">
-                          <div class="modal-content">
-                            <h4>Edit {{dataValues.team_name}}</h4>
-                            
-                                <a class='dropdown-trigger btn' href='#' data-target='dropdownTime'>Time</a>
-                                <!-- Dropdown Structure -->
-                                  <ul id='dropdownTime' class='dropdown-content'>
-                                    <li><a href="#!">6 pm</a></li>
-                                    <li><a href="#!">7 pm</a></li>
-                                    <li><a href="#!">8 pm</a></li>
-                                    <li><a href="#!">9 pm</a></li>
-                                    {{!-- <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                                    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li> --}}
-                                  </ul>
+                  <div id="modal1" class="modal fade" role="dialog">
+                          <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Edit {{dataValues.team_name}}</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            
+                                            <div class="modal-body">
+                                              <form>
+                                                <div class="form-group">
+                                                  <label for="team-name" class="col-form-label">Team Name:</label>
+                                                  <input type="text" class="form-control" id="team-name">
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="message-text" class="col-form-label">Wins:</label>
+                                                  <input type="text" class="form-control" id="wins"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="message-text" class="col-form-label">Losses:</label>
+                                                  <input type="text" class="form-control" id="losses"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="message-text" class="col-form-label">Team Code:</label>
+                                                  <input type="text" class="form-control" id="code"></input>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                 
+                                              
+                                              </form>
+                                            </div>
+                                </div>
 
                           </div>
                           <div class="modal-footer">
@@ -87,6 +107,8 @@
         {{/each}}
     </table>
   </section>
+  
+
   <script src="/javascript/game-create.js"></script>
   <script src="/javascript/game-delete.js"></script>
   <script src="/javascript/game-edit.js"></script>
