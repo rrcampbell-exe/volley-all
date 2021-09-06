@@ -12,7 +12,7 @@ async function teamDeleteFormHandler(event) {
   if (response.ok) {
     document.location.replace("/");
   } else {
-    alert(response.statusText);
+    alert("A team cannot be deleted while it's still scheduled for games. Please remove them from any scheduled games first.");
   }
 }
 
