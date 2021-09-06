@@ -1,3 +1,5 @@
+const gameDelBtn = document.querySelectorAll(".game-delete-btn")
+
 async function gameDeleteFormHandler(event) {
   event.preventDefault();
 
@@ -14,6 +16,10 @@ async function gameDeleteFormHandler(event) {
   }
 }
 
-document
-  .querySelectorAll(".game-delete-btn")
-  .addEventListener("click", gameDeleteFormHandler);
+for (let i = 0; i < gameDelBtn.length; i++) {
+  gameDelBtn[i].addEventListener("click", gameDeleteFormHandler);
+}
+
+// document
+//   .querySelectorAll(".game-delete-btn")
+//   .addEventListener("click", gameDeleteFormHandler);
