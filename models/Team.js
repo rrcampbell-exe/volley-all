@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
+const { v4 :uuidv4 } = require('uuid')
 
 const sequelize = require("../config/connection");
 // create our Team model
@@ -7,13 +8,13 @@ class Team extends Model {}
 Team.init(
   {
     team_id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
     },
     team_name: {
       type: DataTypes.STRING,
+      primaryKey: true,
       allowNull: false,
     },
     code: {
@@ -29,15 +30,6 @@ Team.init(
       type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: 0
-    },
-    points: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 0,
-      get() {
-        const rawValue = this.getDataValue(points);
-        return rawValue ? (this.wins * 3) : 0
-      }
     },
   },
   {

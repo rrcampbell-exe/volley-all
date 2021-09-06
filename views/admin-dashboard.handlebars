@@ -1,4 +1,3 @@
-{{#if is_Admin}}
   <section data-aos="slide-right" data-aos-duration="500">
     <h2 >Create A Team</h2>
     <form class="create-team-form">
@@ -10,19 +9,20 @@
     </form>
   </section>
   <section data-aos="slide-left" data-aos-duration="500">
-    <h2>Current Team List</h2>
-    <table>
+    <h2>League Standings</h2>
+    <table id="league-standings">
       <tr>
         <th>Team Name</th>
-        <th>Points</th>
+        <th>Wins</th>
+        <th>Losses</th>
         <th>Team Code</th>
       </tr>
       {{#each team}}
         <tr>
           {{> team-info }}
           <td>{{dataValues.code}}</td>
-          <td><button><a href="/dashboard/edit/{{team.team_id}}" class="edit-link">Edit Team</a></button></td>
-          <td><button class="team-delete-btn">Delete Team</button></td>
+          <td><button><a href="/dashboard/edit/{{dataValues.team_id}}" class="edit-link">Edit Team</a></button></td>
+          <td><button class="team-delete-btn" id="{{dataValues.team_id}}">Delete Team</button></td>
         </tr>
       {{/each}}
     </table>
@@ -61,8 +61,7 @@
         {{#each game}}
           <tr>
             {{> game-partial}}    
-            <td><button><a href="/dashboard/edit/{{dataValues.game_id}}" class="edit-link">Edit Game</a></button></td>
-            <td><button class="game-delete-btn">Delete Game</button></td>
+            <td><button class="game-delete-btn" id={{dataValues.game_id}}>Delete Game</button></td>
           </tr>
         {{/each}}
     </table>
@@ -73,44 +72,3 @@
   <script src="/javascript/team-create.js"></script>
   <script src="/javascript/team-delete.js"></script>
   <script src="/javascript/team-edit.js"></script>
-{{/if }}
-
-{{#unless is_Admin}}
-  <div data-aos="fade-up" data-aos-duration="1000">
-    <h2>{{team.team_name}}</h2>
-    <p>Team Record: {{team.wins}} Wins, {{team.losses}} Losses ({{team.points}} points)</p>
-  </div>
-  <section data-aos="slide-right" data-aos-duration="1000">
-    <h2>Team Schedule</h2>
-    <table>
-      {{> game-table-header}}
-        {{#each team.game}}
-        <tr>
-          {{> game-partial}}
-        </tr>
-        {{/each}}
-    </table>
-  </section>
-  {{#unless team.game}}
-    <section>
-      <p>There are no scheduled games at this time.</p>
-    </section>
-  {{/unless}}
-
-  <section data-aos="fade-up" data-aos-duration="1000">
-    <h2>{{team.team_name}} Roster</h2>
-    <table>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-        </tr>
-        {{#each user}} 
-        <tr>
-            {{> player-info}}
-        </tr>
-        {{/each}}
-    </table>
-  </section>
-{{/unless}}
-

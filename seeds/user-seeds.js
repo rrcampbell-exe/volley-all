@@ -7,6 +7,7 @@ const userData = [
         email: 'liam@gmail.com',
         password: 'pswd12345',
         team_id: 1,
+        team_name: 'Sets on the Beach'
     },
 
     {
@@ -14,7 +15,8 @@ const userData = [
         last_name: 'Johnson',
         email: 'emily@gmail.com',
         password: 'pswd12345',
-        team_id: 1
+        team_id: 1,
+        team_name: 'Sets on the Beach'
     },
 
     {
@@ -22,7 +24,8 @@ const userData = [
         last_name: 'Samuels',
         email: 'robert@gmail.com',
         password: 'pswd12345',
-        team_id: 1
+        team_id: 1,
+        team_name: 'Sets on the Beach'
     },
 
     {
@@ -30,7 +33,8 @@ const userData = [
         last_name: 'Brown',
         email: 'hannah@gmail.com',
         password: 'pswd12345',
-        team_id: 1
+        team_id: 1,
+        team_name: 'Sets on the Beach'
     },
 
     {
@@ -38,7 +42,8 @@ const userData = [
         last_name: 'Jones',
         email: 'michael@gmail.com',
         password: 'pswd12345',
-        team_id: 1
+        team_id: 1,
+        team_name: 'Sets on the Beach'
     },
 
     {
@@ -46,7 +51,8 @@ const userData = [
         last_name: 'Garcia',
         email: 'samantha@gmail.com',
         password: 'pswd12345',
-        team_id: 1
+        team_id: 1,
+        team_name: 'Sets on the Beach'
     },
 
     {
@@ -54,7 +60,8 @@ const userData = [
         last_name: 'Miller',
         email: 'david@gmail.com',
         password: 'pswd12345',
-        team_id: 2
+        team_id: 2,
+        team_name: 'Setting Ducks'
     },
 
     {
@@ -62,7 +69,8 @@ const userData = [
         last_name: 'Davis',
         email: 'sarah@gmail.com',
         password: 'pswd12345',
-        team_id: 2
+        team_id: 2,
+        team_name: 'Setting Ducks'
     },
 
     {
@@ -70,7 +78,8 @@ const userData = [
         last_name: 'Rodriguez',
         email: 'joseph@gmail.com',
         password: 'pswd12345',
-        team_id: 2
+        team_id: 2,
+        team_name: 'Setting Ducks'
     },
 
 
@@ -79,7 +88,8 @@ const userData = [
         last_name: 'Martinez',
         email: 'ashley@gmail.com',
         password: 'pswd12345',
-        team_id: 2
+        team_id: 2,
+        team_name: 'Setting Ducks'
     },
 
 
@@ -88,7 +98,8 @@ const userData = [
         last_name: 'Hernandez',
         email: 'charles@gmail.com',
         password: 'pswd12345',
-        team_id: 2
+        team_id: 2,
+        team_name: 'Setting Ducks'
     },
 
     {
@@ -97,7 +108,7 @@ const userData = [
         email: 'alexis@gmail.com',
         password: 'pswd12345',
         team_id: 2,
-
+        team_name: 'Setting Ducks'
     },
 
     {
@@ -105,7 +116,8 @@ const userData = [
         last_name: 'Gonzales',
         email: 'danielm@gmail.com',
         password: 'pswd12345',
-        team_id: 3
+        team_id: 3,
+        team_name: 'Ball Busters'
     },
 
     {
@@ -113,7 +125,8 @@ const userData = [
         last_name: 'Wilson',
         email: 'skylar@gmail.com',
         password: 'pswd12345',
-        team_id: 3
+        team_id: 3,
+        team_name: 'Ball Busters'
     },
 
 
@@ -122,7 +135,8 @@ const userData = [
         last_name: 'Anderson',
         email: 'anthonym@gmail.com',
         password: 'pswd12345',
-        team_id: 3
+        team_id: 3,
+        team_name: 'Ball Busters'
     },
 
     {
@@ -130,7 +144,8 @@ const userData = [
         last_name: 'Adams',
         email: 'jessica@gmail.com',
         password: 'pswd12345',
-        team_id: 3
+        team_id: 3,
+        team_name: 'Ball Busters'
     },
 
     {
@@ -138,7 +153,8 @@ const userData = [
         last_name: 'Taylor',
         email: 'donald@gmail.com',
         password: 'pswd12345',
-        team_id: 3
+        team_id: 3,
+        team_name: 'Ball Busters'
     },
 
     {
@@ -146,7 +162,8 @@ const userData = [
         last_name: 'Moore',
         email: 'madison@gmail.com',
         password: 'pswd12345',
-        team_id: 3
+        team_id: 3,
+        team_name: 'Ball Busters'
     },
 
     {
@@ -154,7 +171,8 @@ const userData = [
         last_name: 'Ludwig',
         email: 'paul@gmail.com',
         password: 'pswd12345',
-        team_id: 4
+        team_id: 4,
+        team_name: 'Way Out'
     },
 
     {
@@ -162,7 +180,8 @@ const userData = [
         last_name: 'Jackson',
         email: 'elizabeth@gmail.com',
         password: 'pswd12345',
-        team_id: 4
+        team_id: 4,
+        team_name: 'Way Out'
     },
 
     {
@@ -170,7 +189,8 @@ const userData = [
         last_name: 'Martin',
         email: 'joshua@gmail.com',
         password: 'pswd12345',
-        team_id: 4
+        team_id: 4,
+        team_name: 'Way Out'
     },
 
     {
@@ -178,7 +198,8 @@ const userData = [
         last_name: 'Lee',
         email: 'alyssa@gmail.com',
         password: 'pswd12345',
-        team_id: 4
+        team_id: 4,
+        team_name: 'Way Out'
     },
 
     {
@@ -186,7 +207,8 @@ const userData = [
         last_name: 'Perez',
         email: 'brian@gmail.com',
         password: 'pswd12345',
-        team_id: 4
+        team_id: 4,
+        team_name: 'Way Out'
     },
 
     {
@@ -194,7 +216,8 @@ const userData = [
         last_name: 'Thompson',
         email: 'kayla@gmail.com',
         password: 'pswd12345',
-        team_id: 4
+        team_id: 4,
+        team_name: 'Way Out'
     },
 
     {
@@ -202,7 +225,8 @@ const userData = [
         last_name: 'White',
         email: 'edward@gmail.com',
         password: 'pswd12345',
-        team_id: 5
+        team_id: 5,
+        team_name: 'The Empire Spikes Back'
     },
 
     {
@@ -210,7 +234,8 @@ const userData = [
         last_name: 'Harris',
         email: 'megan@gmail.com',
         password: 'pswd12345',
-        team_id: 5
+        team_id: 5,
+        team_name: 'The Empire Spikes Back'
     },
 
     {
@@ -218,7 +243,8 @@ const userData = [
         last_name: 'Sanchez',
         email: 'jeremy@gmail.com',
         password: 'pswd12345',
-        team_id: 5
+        team_id: 5,
+        team_name: 'The Empire Spikes Back'
     },
 
     {
@@ -226,7 +252,8 @@ const userData = [
         last_name: 'Clark',
         email: 'lauren@gmail.com',
         password: 'pswd12345',
-        team_id: 5
+        team_id: 5,
+        team_name: 'The Empire Spikes Back'
     },
 
     {
@@ -234,7 +261,8 @@ const userData = [
         last_name: 'Ramirez',
         email: 'jasonm@gmail.com',
         password: 'pswd12345',
-        team_id: 5
+        team_id: 5,
+        team_name: 'The Empire Spikes Back'
     },
 
     {
@@ -242,7 +270,8 @@ const userData = [
         last_name: 'Lewis',
         email: 'rachel@gmail.com',
         password: 'pswd12345',
-        team_id: 5
+        team_id: 5,
+        team_name: 'The Empire Spikes Back'
     },
 
 
@@ -251,7 +280,8 @@ const userData = [
         last_name: 'Robinson',
         email: 'ryan@gmail.com',
         password: 'pswd12345',
-        team_id: 6
+        team_id: 6,
+        team_name: 'Safe Sets'
     },
 
 
@@ -260,7 +290,8 @@ const userData = [
         last_name: 'Walker',
         email: 'victoria@gmail.com',
         password: 'pswd12345',
-        team_id: 6
+        team_id: 6,
+        team_name: 'Safe Sets'
     },
 
     {
@@ -268,7 +299,8 @@ const userData = [
         last_name: 'Young',
         email: 'gary@gmail.com',
         password: 'pswd12345',
-        team_id: 6
+        team_id: 6,
+        team_name: 'Safe Sets'
     },
 
     {
@@ -276,7 +308,8 @@ const userData = [
         last_name: 'Allen',
         email: 'brianna@gmail.com',
         password: 'pswd12345',
-        team_id: 6
+        team_id: 6,
+        team_name: 'Safe Sets'
     },
 
     {
@@ -284,7 +317,8 @@ const userData = [
         last_name: 'King',
         email: 'jonathan@gmail.com',
         password: 'pswd12345',
-        team_id: 6
+        team_id: 6,
+        team_name: 'Safe Sets'
     },
 
 
@@ -293,7 +327,8 @@ const userData = [
         last_name: 'Wright',
         email: 'abigail@gmail.com',
         password: 'pswd12345',
-        team_id: 6
+        team_id: 6,
+        team_name: 'Safe Sets'
     },
 
     {
@@ -301,7 +336,8 @@ const userData = [
         last_name: 'Scott',
         email: 'justin@gmail.com',
         password: 'pswd12345',
-        team_id: 7
+        team_id: 7,
+        team_name: 'We Showed Up'
     },
 
     {
@@ -309,7 +345,8 @@ const userData = [
         last_name: 'Torres',
         email: 'amanda@gmail.com',
         password: 'pswd12345',
-        team_id: 7
+        team_id: 7,
+        team_name: 'We Showed Up'
     },
 
     {
@@ -317,7 +354,8 @@ const userData = [
         last_name: 'Hill',
         email: 'benjamin@gmail.com',
         password: 'pswd12345',
-        team_id: 7
+        team_id: 7,
+        team_name: 'We Showed Up'
     },
 
     {
@@ -325,7 +363,8 @@ const userData = [
         last_name: 'Flores',
         email: 'jennifer@gmail.com',
         password: 'pswd12345',
-        team_id: 7
+        team_id: 7,
+        team_name: 'We Showed Up'
     },
 
     {
@@ -333,7 +372,8 @@ const userData = [
         last_name: 'Green',
         email: 'frank@gmail.com',
         password: 'pswd12345',
-        team_id: 7
+        team_id: 7,
+        team_name: 'We Showed Up'
     },
 
     {
@@ -341,14 +381,16 @@ const userData = [
         last_name: 'Adams',
         email: 'olivia@gmail.com',
         password: 'pswd12345',
-        team_id: 7
+        team_id: 7,
+        team_name: 'We Showed Up'
     },
     {
         first_name: 'Jerry',
         last_name: 'Baker',
         email: 'jerry@gmail.com',
         password: 'pswd12345',
-        team_id: 8
+        team_id: 8,
+        team_name: 'Spiked Punch'
     },
 
     {
@@ -356,7 +398,8 @@ const userData = [
         last_name: 'Nelson',
         email: 'emma@gmail.com',
         password: 'pswd12345',
-        team_id: 8
+        team_id: 8,
+        team_name: 'Spiked Punch'
     },
 
     {
@@ -364,7 +407,8 @@ const userData = [
         last_name: 'Rivera',
         email: 'aaron@gmail.com',
         password: 'pswd12345',
-        team_id: 8
+        team_id: 8,
+        team_name: 'Spiked Punch'
     },
 
     {
@@ -372,7 +416,8 @@ const userData = [
         last_name: 'Campbell',
         email: 'morgan@gmail.com',
         password: 'pswd12345',
-        team_id: 8
+        team_id: 8,
+        team_name: 'Spiked Punch'
     },
 
     {
@@ -380,7 +425,8 @@ const userData = [
         last_name: 'Carter',
         email: 'adam@gmail.com',
         password: 'pswd12345',
-        team_id: 8
+        team_id: 8,
+        team_name: 'Spiked Punch'
     },
 
     {
@@ -388,7 +434,8 @@ const userData = [
         last_name: 'Roberts',
         email: 'nicole@gmail.com',
         password: 'pswd12345',
-        team_id: 8
+        team_id: 8,
+        team_name: 'Spiked Punch'
     },
 
     {

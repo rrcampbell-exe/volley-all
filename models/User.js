@@ -41,12 +41,12 @@ User.init(
         len: [4],
       },
     },
-    team_id: {
-      type: DataTypes.INTEGER,
+    team_name: {
+      type: DataTypes.STRING,
       allowNull: true,
       references: {
         model: "team",
-        key: "team_id",
+        key: "team_name",
       },
     },
     is_Admin: {

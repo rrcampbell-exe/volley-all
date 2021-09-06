@@ -1,0 +1,55 @@
+<div>
+  <h2>Welcome, {{user.dataValues.first_name}}!</h2>
+</div>
+<div data-aos="fade-up" data-aos-duration="1000">
+    <h2>{{user_team.dataValues.team_name}}</h2>
+    <p>Team Record: {{user_team.dataValues.wins}} Wins, {{user_team.dataValues.losses}} Losses</p>
+</div>
+  <section data-aos="slide-right" data-aos-duration="1000">
+    <h2>Team Schedule</h2>
+    <table>
+      {{> game-table-header}}
+        {{#each game}}
+        <tr>
+          {{> game-partial}}
+        </tr>
+        {{/each}}
+    </table>
+  </section>
+  {{#unless game}}
+    <section>
+      <p>There are no scheduled games at this time.</p>
+    </section>
+  {{/unless}}
+
+  <section data-aos="slide-left" data-aos-duration="500">
+    <h2>League Standings</h2>
+    <table>
+      <tr>
+        <th>Team Name</th>
+        <th>Wins</th>
+        <th>Losses</th>
+      </tr>
+      {{#each teams}}
+        <tr>
+          {{> team-info }}
+        </tr>
+      {{/each}}
+    </table>
+  </section>
+
+  <section data-aos="fade-up" data-aos-duration="1000">
+    <h2>{{user_team.dataValues.team_name}} Roster</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+        {{#each roster}} 
+        <tr>
+            {{> player-info}}
+        </tr>
+        {{/each}}
+    </table>
+  </section>

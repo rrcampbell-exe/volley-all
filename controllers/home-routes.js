@@ -3,67 +3,73 @@ const sequelize = require("../config/connection");
 const { User, Team, Game } = require("../models");
 const { Op } = require("sequelize");
 
-// IF/ELSE TO HANDLE ADMIN LOGINS
+// IF/ELSE TO HANDLE ADMIN VS PLAYER LOGINS
 
 router.get("/", (req, res) => {
+  // check if user is logged in: if not, send to login page
   if (!req.session.loggedIn) {
     res.redirect("/login");
     return;
   }
-  User.findOne({
-    where: {
-      user_id: req.session.user_id,
-    },
-    include: [Team],
-  }).then((data) => {
-    // checking if user is admin or player
-    if (data.dataValues.team_id === null) {
-      Game.findAll({}).then((gameInfo) => {
-        console.log(gameInfo);
-        // if admin, then pull all team info to display
-        Team.findAll({}).then((teamInfo) => {
-          // console.log(teamInfo)
-          let adminBool = data.dataValues.is_Admin;
-          res.render("dashboard", {
+  // if user is logged in, find Team data
+  Team.findAll({
+    order: [["wins", "DESC"]],
+  }).then((teamInfo) => {
+    // find the specific user who is trying to login
+    User.findOne({
+      where: {
+        user_id: req.session.user_id,
+      },
+    }).then((userData) => {
+      if (typeof userData.dataValues.team_name === "string") {
+        Team.findOne({
+          where: {
+            team_name: userData.dataValues.team_name,
+          },
+        }).then((userTeamInfo) => {
+          User.findAll({
+            where: {
+              team_name: userData.dataValues.team_name,
+            },
+          }).then((rosterData) => {
+            Game.findAll({
+              order: [["date", "ASC"], ["time", "ASC"]],
+              where: {
+                [Op.or]: [
+                  { home_team: userData.dataValues.team_name },
+                  { away_team: userData.dataValues.team_name },
+                ],
+              },
+            }).then((allGames) => {
+              let adminBool = userData.dataValues.is_Admin;
+              console.log(rosterData);
+              res.render("player-dashboard", {
+                loggedIn: req.session.loggedIn,
+                is_Admin: adminBool,
+                teams: teamInfo,
+                user_team: userTeamInfo,
+                game: allGames,
+                user: userData,
+                roster: rosterData,
+              });
+            });
+          });
+        });
+      } else {
+        Game.findAll({
+          order: [["date", "ASC"], ["time", "ASC"]],
+        }).then((gameInfo) => {
+          console.log(gameInfo);
+          let adminBool = userData.dataValues.is_Admin;
+          res.render("admin-dashboard", {
             loggedIn: req.session.loggedIn,
             is_Admin: adminBool,
             team: teamInfo,
             game: gameInfo,
           });
-          return;
         });
-      });
-    } else {
-      // logging in as player
-      User.findAll({
-        where: {
-          team_id: data.dataValues.team_id,
-        },
-      }).then((rosterData) => {
-        console.log(rosterData);
-        Game.findAll({
-          where: {
-            [Op.or]: [
-              { home_team: data.dataValues.team.dataValues.team_id },
-              { away_team: data.dataValues.team.dataValues.team_id },
-            ],
-          },
-          include: [
-            {model: Team,
-            attributes: ['team_name'],}]
-        }).then((gameData) => {
-          let adminBool = data.dataValues_is_Admin;
-          let teamInfo = data.dataValues.team.dataValues;
-          teamInfo["game"] = gameData;
-          res.render("dashboard", {
-            loggedIn: req.session.loggedIn,
-            is_Admin: adminBool,
-            team: teamInfo,
-            user: rosterData,
-          });
-        });
-      });
-    }
+      }
+    });
   });
 });
 

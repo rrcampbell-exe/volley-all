@@ -4,8 +4,6 @@ const sequelize = require("../config/connection");
 
 class Game extends Model {}
 
-// consider adding is_Home designation to these where "opponent" is the relationship between is_Home
-
 Game.init(
   {
     game_id: {
@@ -23,17 +21,17 @@ Game.init(
       allowNull: false,
     },
     home_team: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       references: {
         model: "team",
-        key: "team_id",
+        key: "team_name",
       },
     },
     away_team: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       references: {
         model: "team",
-        key: "team_id",
+        key: "team_name",
       },
     },
   },
