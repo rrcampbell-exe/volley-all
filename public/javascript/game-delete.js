@@ -19,7 +19,3 @@ async function gameDeleteFormHandler(event) {
 for (let i = 0; i < gameDelBtn.length; i++) {
   gameDelBtn[i].addEventListener("click", gameDeleteFormHandler);
 }
-
-// document
-//   .querySelectorAll(".game-delete-btn")
-//   .addEventListener("click", gameDeleteFormHandler);
