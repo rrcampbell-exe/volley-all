@@ -1,69 +1,35 @@
-  <section data-aos="slide-right" data-aos-duration="500">
+  <section class="container"data-aos="slide-right" data-aos-duration="500">
     <h2 >Create A Team</h2>
-    <form class="create-team-form">
+    <form class="create-team-form mb-3">
       <label for="team-name">Team Name</label>
       <input type="text" name="team-name" id="team-name">
       <label for="team-code">Team Code</label>
       <input type="text" name="team-code" id="team-code">
-      <button type="submit">Create Team</button>
+      <button type="submit"><span class="material-icons">
+send
+</span>
+Create Team</button>
     </form>
   </section>
   <section data-aos="slide-left" data-aos-duration="500">
     <h2>League Standings</h2>
-    <table id="league-standings">
+    <table id="league-standings" class="table">
       <tr>
-        <th>Team Name</th>
-        <th>Wins</th>
-        <th>Losses</th>
-        <th>Team Code</th>
+        <th scope="col">Team Name</th>
+        <th scope="col">Wins</th>
+        <th scope="col">Losses</th>
+        <th scope="col">Team Code</th>
       </tr>
       {{#each team}}
         <tr>
           {{> team-info }}
           <td>{{dataValues.code}}</td>
-          <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modal1"   id="edit{{dataValues.team_id}}"></button></td>
+          <td><button type="button" class="btn btn-info modal-btn"  data id="edit{{dataValues.team_id}}"><span class="material-icons">edit</span></button></td>
           <!-- Modal Structure -->
-                  <div id="modal1" class="modal fade" role="dialog">
-                          <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Edit {{dataValues.team_name}}</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                  <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            
-                                            <div class="modal-body">
-                                              <form>
-                                                <div class="form-group">
-                                                  <label for="team-name" class="col-form-label">Team Name:</label>
-                                                  <input type="text" class="form-control" id="team-name">
-                                                </div>
-                                                <div class="form-group">
-                                                  <label for="message-text" class="col-form-label">Wins:</label>
-                                                  <input type="text" class="form-control" id="wins"></input>
-                                                </div>
-                                                <div class="form-group">
-                                                  <label for="message-text" class="col-form-label">Losses:</label>
-                                                  <input type="text" class="form-control" id="losses"></input>
-                                                </div>
-                                                <div class="form-group">
-                                                  <label for="message-text" class="col-form-label">Team Code:</label>
-                                                  <input type="text" class="form-control" id="code"></input>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Submit</button>
-                                                 
-                                              
-                                              </form>
-                                            </div>
-                                </div>
+          
+                 
 
-                          </div>
-                          <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                          </div>
-                  </div>
-          <td><button class="team-delete-btn" id="{{dataValues.team_id}}">Delete Team</button></td>
+          <td><button class="team-delete-btn" id="{{dataValues.team_id}}"><span class="material-icons">delete</span></button></td>
         </tr>
       {{/each}}
     </table>
@@ -97,18 +63,58 @@
   </section>
   <section data-aos="fade-up" data-aos-duration="500">
     <h2>League Schedule</h2>
-    <table>
+    <table class="table">
       {{> game-table-header}}
         {{#each game}}
           <tr>
             {{> game-partial}}    
-            <td><button class="game-delete-btn" id={{dataValues.game_id}}>Delete Game</button></td>
+            <td><button class="game-delete-btn" id={{dataValues.game_id}}><span class="material-icons">delete</span></button></td>
           </tr>
         {{/each}}
     </table>
   </section>
   
+ <div id="modal1" class="modal fade" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Edit {{dataValues.team_name}}</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            
+                                            <div class="modal-body">
+                                              <form>
+                                                    <div class="form-group">
+                                                      <label for="team-name" class="col-form-label">Team Name:</label>
+                                                      <input type="text" class="form-control" id="team-name">
+                                                    </div>
 
+                                                    <div class="form-group">
+                                                      <label for="message-text" class="col-form-label">Wins:</label>
+                                                      <input type="text" class="form-control" id="wins"></input>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                      <label for="message-text" class="col-form-label">Losses:</label>
+                                                      <input type="text" class="form-control" id="losses"></input>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                      <label for="message-text" class="col-form-label">Team Code:</label>
+                                                      <input type="text" class="form-control" id="code"></input>
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                      <button type="button" id class="btn btn-save">Submit</button>
+                                                    </div>
+                                              </form>
+                                            </div>
+                                </div>
+                          </div>
+                  </div>
   <script src="/javascript/game-create.js"></script>
   <script src="/javascript/game-delete.js"></script>
   <script src="/javascript/game-edit.js"></script>
