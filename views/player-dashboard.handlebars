@@ -6,7 +6,7 @@
     <p>Team Record: {{user_team.dataValues.wins}} Wins, {{user_team.dataValues.losses}} Losses</p>
 </div>
   <section data-aos="slide-right" data-aos-duration="1000">
-    <h2>Team Schedule</h2>
+    <h2 id="team-schedule">Team Schedule</h2>
     <table>
       {{> game-table-header}}
         {{#each game}}
@@ -23,7 +23,7 @@
   {{/unless}}
 
   <section data-aos="slide-left" data-aos-duration="500">
-    <h2>League Standings</h2>
+    <h2 id="league-standings">League Standings</h2>
     <table>
       <tr>
         <th>Team Name</th>
@@ -39,7 +39,7 @@
   </section>
 
   <section data-aos="fade-up" data-aos-duration="1000">
-    <h2>{{user_team.dataValues.team_name}} Roster</h2>
+    <h2 id="team-roster">{{user_team.dataValues.team_name}} Roster</h2>
     <table>
         <tr>
             <th>First Name</th>

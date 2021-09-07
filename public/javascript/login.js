@@ -82,7 +82,7 @@ async function loginFormHandler(event) {
     if (response.ok) {
       window.location.replace("/");
     } else {
-      alert(response.statusText);
+      alert("We're sorry, but there's no account associated with that login information. Please double check your email address, password, and whether you are already signed up for a team.");
     }
   }
 }
