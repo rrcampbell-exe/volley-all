@@ -16,9 +16,9 @@ function signupFormHandler(event) {
       for (let i = 0; i < teamData.length; i++) {
         if (team_code == teamData[i].code) {
           // goal is to take team_id where team_code matches and reassign team_id to this team's team_id
-          let team_id = teamData[i].team_id;
-          console.log(team_id);
-          signUpCompletion(first_name, last_name, email, password, team_id);
+          let team_name = teamData[i].team_name;
+          console.log(team_name);
+          signUpCompletion(first_name, last_name, email, password, team_name);
           return;
         }
       }
@@ -30,11 +30,11 @@ async function signUpCompletion(
   last_name,
   email,
   password,
-  team_id
+  team_name
 ) {
 
-  if (first_name && last_name && email && password && team_id) {
-    console.log(team_id);
+  if (first_name && last_name && email && password && team_name) {
+    console.log(team_name);
     const response = await fetch("/api/users/", {
       method: "post",
       body: JSON.stringify({
@@ -42,7 +42,7 @@ async function signUpCompletion(
         last_name,
         email,
         password,
-        team_id,
+        team_name,
       }),
       headers: { "Content-Type": "application/json" },
     });
