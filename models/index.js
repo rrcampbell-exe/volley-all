@@ -6,7 +6,8 @@ const { Model } = require("sequelize");
 
 // create associations
 Team.hasMany(User, {
-    foreignKey: 'team_name'
+    foreignKey: 'team_name',
+    onDelete: 'CASCADE'
 });
 
 User.belongsTo(Team, {

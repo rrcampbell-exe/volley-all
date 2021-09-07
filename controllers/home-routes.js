@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
         user_id: req.session.user_id,
       },
     }).then((userData) => {
-      if (typeof userData.dataValues.team_name === "string") {
+      if (userData.dataValues.team_name === "string") {
         Team.findOne({
           where: {
             team_name: userData.dataValues.team_name,
