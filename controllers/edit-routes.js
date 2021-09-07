@@ -4,8 +4,8 @@ const Team = require('../models/Team');
 const withAuth = require('../utils/auth');
 
 // TEAM EDIT ROUTE
-router.get("/team/:id", withAuth, (req, res) => {
-  Team.findOne(req.params.team_id, {
+router.get("/team/:team_id", withAuth, (req, res) => {
+  Team.findOne({
     where: {
       team_id: req.params.team_id,
     },
