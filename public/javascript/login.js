@@ -20,6 +20,9 @@ function signupFormHandler(event) {
           console.log(team_name);
           signUpCompletion(first_name, last_name, email, password, team_name);
           return;
+        } else {
+          alert("The team code you have entered does not match our records.")
+          return;
         }
       }
     });
