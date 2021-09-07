@@ -16,7 +16,7 @@ function signupFormHandler(event) {
       for (let i = 0; i < teamData.length; i++) {
         if (team_code == teamData[i].code) {
           // goal is to take team_id where team_code matches and reassign team_id to this team's team_id
-          team_id = teamData[i].team_id;
+          let team_id = teamData[i].team_id;
           console.log(team_id);
           signUpCompletion(first_name, last_name, email, password, team_id);
           return;
@@ -55,6 +55,7 @@ async function signUpCompletion(
     }
   }
 }
+
 async function loginFormHandler(event) {
   event.preventDefault();
 

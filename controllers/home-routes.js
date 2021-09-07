@@ -2,6 +2,7 @@ const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { User, Team, Game } = require("../models");
 const { Op } = require("sequelize");
+const withAuth = require('../utils/auth')
 
 // IF/ELSE TO HANDLE ADMIN VS PLAYER LOGINS
 
@@ -72,6 +73,7 @@ router.get("/", (req, res) => {
     });
   });
 });
+
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {

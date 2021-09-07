@@ -21,7 +21,7 @@
         <tr>
           {{> team-info }}
           <td>{{dataValues.code}}</td>
-          <td><button><a href="/dashboard/edit/{{dataValues.team_id}}" class="edit-link">Edit Team</a></button></td>
+          <td><button><a href="/edit/team/{{dataValues.team_id}}" class="edit-link">Edit Team</a></button></td>
           <td><button class="team-delete-btn" id="{{dataValues.team_id}}">Delete Team</button></td>
         </tr>
       {{/each}}
