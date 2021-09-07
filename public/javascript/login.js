@@ -13,18 +13,32 @@ function signupFormHandler(event) {
       console.log(teamData);
       console.log(team_code);
       // compare team_code to all codes
-      for (let i = 0; i < teamData.length; i++) {
-        if (team_code == teamData[i].code) {
-          // goal is to take team_id where team_code matches and reassign team_id to this team's team_id
-          let team_name = teamData[i].team_name;
-          console.log(team_name);
-          signUpCompletion(first_name, last_name, email, password, team_name);
-          return;
-        } else {
-          alert("The team code you have entered does not match our records.")
-          return;
+
+      const foundTeam = teamData.find(function(team, index) {
+        if (team.code == team_code) {
+          return true;
         }
+      })
+
+      console.log(foundTeam)
+
+      if (foundTeam) {
+        let team_name = foundTeam.team_name;
+        signUpCompletion(first_name, last_name, email, password, team_name);
+        return;
+      } else {
+        alert("We have no team associated with that team code. Please double check your code and try again.")
       }
+
+      // for (let i = 0; i < teamData.length; i++) {
+      //   if (team_code == teamData[i].code) {
+      //     // goal is to take team_id where team_code matches and reassign team_id to this team's team_id
+      //     let team_name = teamData[i].team_name;
+      //     console.log(team_name);
+      //     signUpCompletion(first_name, last_name, email, password, team_name);
+      //     return;
+      //   }
+      // }
     });
 }
 
