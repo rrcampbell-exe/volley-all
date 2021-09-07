@@ -48,7 +48,6 @@ async function signUpCompletion(
     });
 
     if (response.ok) {
-      alert("You have registered successfully. Please use your credentials to log in.")
       window.location.replace("/login");
     } else {
       alert(response.statusText);
