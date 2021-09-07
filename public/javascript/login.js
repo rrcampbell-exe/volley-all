@@ -13,15 +13,23 @@ function signupFormHandler(event) {
       console.log(teamData);
       console.log(team_code);
       // compare team_code to all codes
-      for (let i = 0; i < teamData.length; i++) {
-        if (team_code == teamData[i].code) {
-          // goal is to take team_id where team_code matches and reassign team_id to this team's team_id
-          team_id = teamData[i].team_id;
-          console.log(team_id);
-          signUpCompletion(first_name, last_name, email, password, team_id);
-          return;
+
+      const foundTeam = teamData.find(function(team, index) {
+        if (team.code == team_code) {
+          return true;
         }
+      })
+
+      console.log(foundTeam)
+
+      if (foundTeam) {
+        let team_name = foundTeam.team_name;
+        signUpCompletion(first_name, last_name, email, password, team_name);
+        return;
+      } else {
+        alert("We have no team associated with that team code. Please double check your code and try again.")
       }
+
     });
 }
 
@@ -30,11 +38,11 @@ async function signUpCompletion(
   last_name,
   email,
   password,
-  team_id
+  team_name
 ) {
 
-  if (first_name && last_name && email && password && team_id) {
-    console.log(team_id);
+  if (first_name && last_name && email && password && team_name) {
+    console.log(team_name);
     const response = await fetch("/api/users/", {
       method: "post",
       body: JSON.stringify({
@@ -42,19 +50,19 @@ async function signUpCompletion(
         last_name,
         email,
         password,
-        team_id,
+        team_name,
       }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      alert("You have registered successfully. Please use your credentials to log in.")
       window.location.replace("/login");
     } else {
       alert(response.statusText);
     }
   }
 }
+
 async function loginFormHandler(event) {
   event.preventDefault();
 

@@ -19,7 +19,7 @@ Volley-All is a full-stack application that helps taverns and bars manage their 
 ### Player Homepage
 
 ## Usage
-Please visit SITE URL and create an account to log in as a user. To log in as an admin, you can find admin login credentials in the `seeds` folder under `user-seeds`.
+Please visit [https://volley-all.herokuapp.com/](https://volley-all.herokuapp.com/) and create an account to log in as a user. To log in as an admin, you can find admin login credentials in the `seeds` folder under `user-seeds`.
 
 ## Features
  - aos.js

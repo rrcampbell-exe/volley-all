@@ -9,9 +9,9 @@ async function teamCreateHandler(event) {
       method: "post",
       body: JSON.stringify({
         team_name,
-        code
+        code,
       }),
-      headers: { "Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
@@ -22,4 +22,6 @@ async function teamCreateHandler(event) {
   }
 }
 
-document.querySelector(".create-team-form").addEventListener("submit", teamCreateHandler)
+document
+  .querySelector(".create-team-form")
+  .addEventListener("submit", teamCreateHandler);
