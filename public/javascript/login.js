@@ -30,15 +30,6 @@ function signupFormHandler(event) {
         alert("We have no team associated with that team code. Please double check your code and try again.")
       }
 
-      // for (let i = 0; i < teamData.length; i++) {
-      //   if (team_code == teamData[i].code) {
-      //     // goal is to take team_id where team_code matches and reassign team_id to this team's team_id
-      //     let team_name = teamData[i].team_name;
-      //     console.log(team_name);
-      //     signUpCompletion(first_name, last_name, email, password, team_name);
-      //     return;
-      //   }
-      // }
     });
 }
 
