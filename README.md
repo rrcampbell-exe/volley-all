@@ -29,6 +29,8 @@ Please visit [https://volley-all.herokuapp.com/](https://volley-all.herokuapp.co
  - Express
  - Express-Handlebars
  - Express-Session
+ - Heroku
+ - JawsDB
  - MySQL2
  - Sequelize
  - UUID

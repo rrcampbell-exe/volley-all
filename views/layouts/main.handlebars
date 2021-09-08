@@ -19,19 +19,16 @@
         <nav data-aos="fade-in" data-aos-duration="1500">
           {{#if loggedIn}}
             {{#if is_Admin}}
-            <a href="/"><button id="dashboard" class="btn-no-style">dashboard</button></a>
-            <a href="#create-a-team"><button class="btn-no-style">create a team</button></a>
-            <a href="#league-standings"><button class="btn-no-style">league standings</button></a>
-            <a href="#add-a-game"><button class="btn-no-style">add a game</button></a>
-            <a href="#league-schedule"><button class="btn-no-style">league schedule</button></a>
-            <button id="logout" class="btn-no-style">logout</button>
-            {{else}}
-            <a href="/"><button id="dashboard" class="btn-no-style">dashboard</button></a>
-            <a href="#team-schedule"><button class="btn-no-style">team schedule</button></a>
-            <a href="#league-standings"><button class="btn-no-style">league standings</button></a>
-            <a href="#team-roster"><button class="btn-no-style">team roster</button></a>
-            <button id="logout" class="btn-no-style">logout</button>
+            <a href="/">dashboard</a>
+            <a href="#create-a-team">create a team</a>
+            {{> admin-navbar-partial}}
+            <a href="/login" id="logout" class="btn-no-style">logout</a>
             {{/if}}
+            {{#unless is_Admin}}
+            <a href="/">dashboard</a>
+            {{> player-navbar-partial}}
+            <a href="/login" id="logout" class="btn-no-style">logout</a>
+            {{/unless}}
           {{else}}
             <a href="/login">login</a>
           {{/if}}

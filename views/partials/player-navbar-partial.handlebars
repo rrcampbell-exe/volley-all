@@ -1,0 +1,8 @@
+{{#if is_Admin}}
+<a href="#league-standings">league standings</a>
+<a href="#league-schedule">league schedule</a>
+{{/if}}
+{{#unless is_Admin}}
+<a href="https://volley-all.herokuapp.com/#league-standings">league standings</a>
+<a href="https://volley-all.herokuapp.com/#league-schedule">league schedule</a>
+{{/unless}}
