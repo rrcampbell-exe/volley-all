@@ -1,14 +1,14 @@
-<div class='cyan lighten-5'>
+<div>
   <div>
-  <h2>Welcome, {{user.dataValues.first_name}}!</h2>
+  <h3>Welcome, {{user.dataValues.first_name}}!</h3>
 </div>
 <div data-aos="fade-up" data-aos-duration="1000">
-    <h2>{{user_team.dataValues.team_name}}</h2>
+    <h4>{{user_team.dataValues.team_name}}</h4>
     <p>Team Record: {{user_team.dataValues.wins}} Wins, {{user_team.dataValues.losses}} Losses</p>
 </div>
-  <section data-aos="slide-right" data-aos-duration="1000">
-    <h2 id="schedule">Team Schedule</h2>
-    <table class='padding1'>
+  <section data-aos="slide-right" data-aos-duration="1000" class='margin2 shadow1 radius'>
+    <h4 id="schedule" class='padding2'>Team Schedule</h4>
+    <table class='padding1 highlight striped'>
       {{> game-table-header}}
         {{#each game}}
         <tr>
@@ -23,9 +23,9 @@
     </section>
   {{/unless}}
 
-  <section data-aos="slide-left" data-aos-duration="500">
-    <h2 id="league-standings">League Standings</h2>
-    <table class='padding1'>
+  <section data-aos="slide-left" data-aos-duration="500" class='margin2 shadow1 radius'>
+    <h4 id="league-standings" class='padding2'>League Standings</h4>
+    <table class='padding1 highlight striped'>
       <tr class='padding1'>
         <th>Team Name</th>
         <th>Wins</th>
@@ -39,9 +39,9 @@
     </table>
   </section>
 
-  <section data-aos="fade-up" data-aos-duration="1000">
-    <h2 id="team-roster">{{user_team.dataValues.team_name}} Roster</h2>
-    <table>
+  <section data-aos="fade-up" data-aos-duration="1000" class='margin2 shadow1 radius'>
+    <h4 id="team-roster" class='padding2'>{{user_team.dataValues.team_name}} Roster</h4>
+    <table class='padding1 highlight striped'>
         <tr>
             <th>First Name</th>
             <th>Last Name</th>

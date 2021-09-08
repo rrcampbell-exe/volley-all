@@ -30,16 +30,23 @@ html {
   .padding1 {
       padding: 3vw;
   }
+  .padding2 {
+    padding: 1.5vw;
+}
 
   .margin1{
     margin: 2vw 10vw 2vw 10vw;
+  }
+
+  .margin2{
+    margin: 8vw 0vw;
   }
   .radius{
       border-radius: 2vw;
   }
 
   .shadow{
-    text-shadow: 2px 2px 5px #a9acbb;
+    text-shadow: 2px 2px 5px #1d1d1d;
     
   }
   .shadow1{
