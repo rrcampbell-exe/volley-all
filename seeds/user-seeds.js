@@ -259,7 +259,7 @@ const userData = [
     {
         first_name: 'Jason',
         last_name: 'Ramirez',
-        email: 'jasonm@gmail.com',
+        email: 'jason@gmail.com',
         password: 'pswd12345',
         team_id: 5,
         team_name: 'The Empire Spikes Back'

@@ -6,7 +6,7 @@ const withAuth = require("../../utils/auth");
 // GET all teams
 router.get(`/`, (req, res) => {
     Team.findAll({
-    
+        attributes: { exclude: [`team_id`] },
         include: [
             {
                 model: User,
@@ -24,7 +24,7 @@ router.get(`/`, (req, res) => {
 // GET a single team by "id"
 router.get(`/:team_id`, (req, res) => {
     Team.findOne({
-        attributes: { exclude: [`code`] }, 
+        attributes: { exclude: [`team_id`] }, 
         include: [
             {
                 model: User,
