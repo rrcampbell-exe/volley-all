@@ -37,3 +37,12 @@ html {
   .radius{
       border-radius: 2vw
   }
+
+  .shadow{
+    text-shadow: 2px 2px 5px #a9acbb;
+    
+  }
+
+ .icon-white {
+        color: white;
+ }

@@ -1,4 +1,5 @@
-<div>
+<div class='cyan lighten-5'>
+  <div>
   <h2>Welcome, {{user.dataValues.first_name}}!</h2>
 </div>
 <div data-aos="fade-up" data-aos-duration="1000">
@@ -7,7 +8,7 @@
 </div>
   <section data-aos="slide-right" data-aos-duration="1000">
     <h2 id="schedule">Team Schedule</h2>
-    <table>
+    <table class='padding1'>
       {{> game-table-header}}
         {{#each game}}
         <tr>
@@ -24,8 +25,8 @@
 
   <section data-aos="slide-left" data-aos-duration="500">
     <h2 id="league-standings">League Standings</h2>
-    <table>
-      <tr>
+    <table class='padding1'>
+      <tr class='padding1'>
         <th>Team Name</th>
         <th>Wins</th>
         <th>Losses</th>
@@ -53,3 +54,4 @@
         {{/each}}
     </table>
   </section>
+  </div>

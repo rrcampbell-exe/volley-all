@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Volley-All</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -14,23 +15,24 @@
       <header>
         <h1 data-aos="flip-up" data-aos-duration="1000">
           🏐
-          <a href="/" class='grey-text text-lighten-5'>Volley-All</a>
+          <a href="/" class='grey-text text-lighten-1 shadow'>Volley-All</a>
         </h1>
         <nav data-aos="fade-in" data-aos-duration="1500" class="overlay2">
+          
           {{#if loggedIn}}
             {{#if is_Admin}}
-            <a href="/">dashboard</a>
-            <a href="#create-a-team">create a team</a>
+            <a href="/" class ="col grey-text">dashboard</a>
+            <a href="#create-a-team" class ='col grey-text'>create a team</a>
             {{> admin-navbar-partial}}
-            <a href="/login" id="logout" class="btn-no-style">logout</a>
+            <a href="/login" id="logout" class="col btn-no-style grey-text">logout</a>
             {{/if}}
             {{#unless is_Admin}}
             <a href="/">dashboard</a>
             {{> player-navbar-partial}}
-            <a href="/login" id="logout" class="btn-no-style">logout</a>
+            <a href="/login" id="logout" class="col btn-no-style grey-text">logout</a>
             {{/unless}}
           {{else}}
-            <a href="/login">login</a>
+            <a href="/login" class ="grey-text">login</a>
           {{/if}}
         </nav>
       </header>

@@ -1,6 +1,6 @@
   <section data-aos="slide-right" data-aos-duration="500">
     <h2 id="create-a-team">Create A Team</h2>
-    <form class="create-team-form">
+    <form class="create-team-form margin1 padding1 radius login-form row left-align">
       <label for="team-name">Team Name</label>
       <input type="text" name="team-name" id="team-name">
       <label for="team-code">Team Code</label>
@@ -21,8 +21,8 @@
         <tr>
           {{> team-info }}
           <td>{{dataValues.code}}</td>
-          <td><button><a href="/edit/team/{{dataValues.team_id}}" class="edit-link">Edit Team</a></button></td>
-          <td><button class="team-delete-btn" id="{{dataValues.team_id}}">Delete Team</button></td>
+          <td><button class=" waves-effect waves-light btn"><a href="/edit/team/{{dataValues.team_id}}" class="edit-link icon-white"><span class="material-icons md-light">edit</span></a></button></td>
+          <td><button class="team-delete-btn waves-effect red lighten-3 btn" id="{{dataValues.team_id}}"><span class="material-icons md-light">delete</span></button></td>
         </tr>
       {{/each}}
     </table>
@@ -61,7 +61,7 @@
         {{#each game}}
           <tr>
             {{> game-partial}}    
-            <td><button class="game-delete-btn" id={{dataValues.game_id}}>Delete Game</button></td>
+            <td><button class="game-delete-btn waves-effect red lighten-3 btn" id={{dataValues.game_id}}><span class="material-icons">delete</span></button></td>
           </tr>
         {{/each}}
     </table>
