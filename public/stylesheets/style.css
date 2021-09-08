@@ -18,7 +18,7 @@ html {
 
   .background2{
     background-image: url("\media\pexels-engin-akyurt-1552620.jpg");
-    background-color: rgb(168, 168, 168);
+    background-color: rgb(209, 209, 209);
     background-size: cover;
     z-index: -2000;
   }
