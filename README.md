@@ -45,6 +45,9 @@ Please open a pull request to contribute to this project.
 - [Olga Smolyakova](https://www.github.com/smolyakova30/)
 - [Kait Weishaar](https://www.github.com/kait-weishaar/)
 
+### Media
+- Volleyball player photos and video by [Kampus Production](https://www.pexels.com/@kampus) on Pexels
+
 ## Questions, Comments, Suggestions
 Please email [Ryan R. Campbell](mailto:campbell.ryan.r@gmail.com) with any questions, to report any bugs, or to make any feature suggestions. You can also [contact Ryan R. Campbell on GitHub](https://www.github.com/rrcampbell-exe/).
 
