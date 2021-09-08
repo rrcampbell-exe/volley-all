@@ -1,3 +1,39 @@
 html {
     scroll-behavior: smooth;
 }
+
+
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    /* min-height: 100vw; */
+    z-index: -5000;
+    filter: opacity(40);
+    filter: blur(2 px);
+    
+  }
+
+  .overlay{
+      background: rgba(255,255,255,0.90)
+  }
+  .overlay2{
+    background: rgba(255,255,255,0.25)
+}
+
+  .relative{
+      position: relative;
+  }
+
+  .padding1 {
+      padding: 3vw
+  }
+
+  .margin1{
+    margin: 2vw 10vw 2vw 10vw
+  }
+  .radius{
+      border-radius: 2vw
+  }

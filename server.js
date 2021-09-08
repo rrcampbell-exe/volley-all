@@ -7,7 +7,7 @@ const session = require("express-session");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3004;
 const hbs = exphbs.create();
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
