@@ -28,19 +28,22 @@ html {
   }
 
   .padding1 {
-      padding: 3vw
+      padding: 3vw;
   }
 
   .margin1{
-    margin: 2vw 10vw 2vw 10vw
+    margin: 2vw 10vw 2vw 10vw;
   }
   .radius{
-      border-radius: 2vw
+      border-radius: 2vw;
   }
 
   .shadow{
     text-shadow: 2px 2px 5px #a9acbb;
     
+  }
+  .shadow1{
+    box-shadow:2px 2px 5px #a9acbb;
   }
 
  .icon-white {

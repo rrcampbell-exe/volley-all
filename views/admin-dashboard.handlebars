@@ -1,16 +1,16 @@
-  <section data-aos="slide-right" data-aos-duration="500">
-    <h2 id="create-a-team">Create A Team</h2>
+  <section data-aos="slide-right" data-aos-duration="500" class='radius shadow1'>
+    <h3 id="create-a-team" class='padding1 margin1'>Create A Team</h3>
     <form class="create-team-form margin1 padding1 radius login-form row left-align">
       <label for="team-name">Team Name</label>
       <input type="text" name="team-name" id="team-name">
       <label for="team-code">Team Code</label>
       <input type="text" name="team-code" id="team-code">
-      <div class="center-align"><button type="submit" class="team-delete-btn waves-effect teal lighten-3 btn"><div class='valign-wrapper'><span class="material-icons">add</span>Create Team</div></button></div>
+      <div class="center-align"><button type="submit" class="waves-effect teal lighten-3 btn"><div class='valign-wrapper'><span class="material-icons">add</span>Create Team</div></button></div>
     </form>
   </section>
   <section data-aos="slide-left" data-aos-duration="500">
-    <h2 id="league-standings">League Standings</h2>
-    <table>
+    <h3 id="league-standings">League Standings</h3>
+    <table class='highlight'>
       <tr>
         <th>Team Name</th>
         <th>Wins</th>
@@ -27,8 +27,8 @@
       {{/each}}
     </table>
   </section>
-  <section data-aos="fade-in" data-aos-duration="1000">
-    <h2 id="add-a-game">Add A Game</h2>
+  <section data-aos="fade-in" data-aos-duration="1000" class='radius shadow1'>
+    <h3 id="add-a-game" class='padding1 margin1'>Add A Game</h3>
     <form class="create-game-form left-align margin1 padding1">
       <label for="home-team">Home Team</label>
         <select name="home-team" id="home-team" class="browser-default">
@@ -55,8 +55,8 @@
     </form>
   </section>
   <section data-aos="fade-up" data-aos-duration="500">
-    <h2 id="schedule">League Schedule</h2>
-    <table>
+    <h3 id="schedule">League Schedule</h3>
+    <table class='highlight'>
       {{> game-table-header}}
         {{#each game}}
           <tr>
