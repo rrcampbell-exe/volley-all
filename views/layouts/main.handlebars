@@ -27,14 +27,12 @@
             <a href="/login" id="logout" class="col btn-no-style grey-text padding2">logout</a>
             {{/if}}
             {{#unless is_Admin}}
-            <a href="/">dashboard</a>
+            <a href="/" class="col btn-no-style grey-text padding2">dashboard</a>
             {{> player-navbar-partial}}
             <a href="/login" id="logout" class="col btn-no-style grey-text padding2">logout</a>
             {{/unless}}
           {{else}}
-            {{!-- SOOOO do we need a link to the login page on the login page? maybe not lol --}}
-            {{!-- <a href="/login" class ="grey-text">login</a> --}}
-            <p>Welcome to Volley-All! Please login or scroll to sign up!</p>
+            <p class="shadow">Volley For All. Volley-All.</p>
           {{/if}}
         </nav>
       </header>
@@ -42,7 +40,7 @@
         {{{body}}}
       </main>
       <footer>
-        <a href="https://github.com/rrcampbell-exe/volley-all" target="_blank">Bump, set, and spike with us on GitHub.</a>
+        <a href="https://github.com/rrcampbell-exe/volley-all" target="_blank" class="col btn-no-style grey-text padding2">Bump, set, and spike with us on GitHub.</a>
       </footer>
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

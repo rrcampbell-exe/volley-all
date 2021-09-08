@@ -1,68 +1,83 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
-
-
 
 #myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    /* min-height: 100vw; */
-    z-index: -5000;
-    filter: opacity(40);
-    filter: blur(2 px);
-    
-  }
-
-  .background2{
-    background-image: url("\media\pexels-engin-akyurt-1552620.jpg");
-    background-color: rgb(209, 209, 209);
-    background-size: cover;
-    z-index: -2000;
-  }
-
-  .overlay{
-      background: rgba(255,255,255,0.90)
-  }
-  .overlay2{
-    background: rgba(255,255,255,0.25)
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  /* min-height: 100vw; */
+  z-index: -5000;
+  filter: opacity(40);
+  filter: blur(2 px);
 }
 
-  .relative{
-      position: relative;
-  }
+/* .left-column {
+  margin-right: 1.25%;
+} */
 
-  .padding1 {
-      padding: 3vw;
-  }
-  .padding2 {
-    padding: 1.5vw;
+/* .right-column {
+  margin-left: 1.25%;
+} */
+
+.background2 {
+  background-image: url("/media/pexels-engin-akyurt-1552620.jpg");
+  background-color: rgb(209, 209, 209);
+  background-size: cover;
+  z-index: -2000;
+  opacity: 0.2;
 }
 
-  .margin1{
-    margin: 2vw 10vw 2vw 10vw;
-  }
+.overlay {
+  background: rgba(255, 255, 255, 0.9);
+}
+.overlay2 {
+  background: rgba(255, 255, 255, 0.25);
+}
 
-  .margin2{
-    margin: 4vw 0vw;
-  }
-  .margin3{
-    margin: 2vw 0;
-  }
-  .radius{
-      border-radius: 2vw;
-  }
+.relative {
+  position: relative;
+}
 
-  .shadow{
-    text-shadow: 2px 2px 5px #1d1d1d;
-    
-  }
-  .shadow1{
-    box-shadow:2px 2px 5px #a9acbb;
-  }
+.padding1 {
+  padding: 3vw;
+}
+.padding2 {
+  padding: 1.5vw;
+}
 
- .icon-white {
-        color: white;
- }
+.margin1 {
+  margin: 2vw 10vw 2vw 10vw;
+}
+
+.margin2 {
+  margin: 4vw 0vw;
+}
+.margin3 {
+  margin: 2vw 0;
+}
+.radius {
+  border-radius: 2vw;
+}
+
+.shadow {
+  text-shadow: 2px 2px 5px #1d1d1d;
+  color: white;
+}
+
+.shadow1 {
+  box-shadow: 2px 2px 5px #a9acbb;
+}
+
+.icon-white {
+  color: white;
+}
+
+footer {
+  margin: 2.5%;
+}
+
+footer a {
+  text-shadow: 1px 1px 5px white;
+}

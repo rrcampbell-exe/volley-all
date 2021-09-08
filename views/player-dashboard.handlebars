@@ -1,11 +1,11 @@
 <div>
-  <div class='background2 radius shadow1 padding2 margin3'>
+  <div class='background2 radius shadow1 padding2 margin3' data-aos="fade-up" data-aos-duration="1000">
         <div>
-            <h3>Welcome, {{user.dataValues.first_name}}!</h3>
+            <h3 class="shadow">Welcome, {{user.dataValues.first_name}}!</h3>
         </div>
-        <div data-aos="fade-up" data-aos-duration="1000">
-            <h4>{{user_team.dataValues.team_name}}</h4>
-            <p>Team Record: {{user_team.dataValues.wins}} Wins, {{user_team.dataValues.losses}} Losses</p>
+        <div>
+            <h4 class="shadow">{{user_team.dataValues.team_name}}</h4>
+            <p class="shadow">Team Record: {{user_team.dataValues.wins}} Wins, {{user_team.dataValues.losses}} Losses</p>
         </div>
   </div>
   <section data-aos="slide-right" data-aos-duration="1000" class='margin2 shadow1 radius padding2'>

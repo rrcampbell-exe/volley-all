@@ -1,44 +1,52 @@
 <video autoplay muted loop id="myVideo">
         <source src="\media\pexels-kampus-production-6179722.mp4" type="video/mp4">
 </video>
-<form class="margin1 padding1 radius login-form row left-align z-depth-2 section overlay" data-aos="fade-in" data-aos-duration="1500">
-  <div class='hoverable'>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" placeholder="email@email.com"/>
+<div class="row login-row">
+  <div class="col s12 m5 left-column">
+    <form class="margin1 padding1 radius login-form row z-depth-2 section overlay" data-aos="fade-in" data-aos-duration="1500">
+      <div class='hoverable left-align'>
+        <label for="email-login ">email:</label>
+        <input type="text" id="email-login" placeholder="email@email.com"/>
+      </div>
+      <div class='hoverable left-align'>
+        <label for="password-login">password:</label>
+        <input type="password" id="password-login" placeholder="password"/>
+      </div>
+      <div>
+        <button type="submit" class='btn waves-effect blue-grey lighten-2 hoverable'>login</button>
+      </div>
+    </form>
   </div>
-  <div class='hoverable'>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" placeholder="password"/>
-  </div>
-  <div>
-    <button type="submit" class='btn waves-effect blue-grey lighten-3 hoverable'>login</button>
-  </div>
-</form>
 
-<form class="signup-form margin1 padding1 radius login-form row left-align z-depth-2 section overlay" data-aos="fade-in" data-aos-duration="1500">
-  <div class='hoverable'>
-    <label for="first-name-signup">first name:</label>
-    <input type="text" id="first-name-signup" placeholder="First Name"/>
+  <div class="col m1"></div>
+
+  <div class="col s12 m6 right-column">
+    <form class="signup-form margin1 padding1 radius login-form row z-depth-2 section overlay" data-aos="fade-in" data-aos-duration="1500">
+      <div class='hoverable left-align'>
+        <label for="first-name-signup">first name:</label>
+        <input type="text" id="first-name-signup" placeholder="first name"/>
+      </div>
+      <div class='hoverable left-align'>
+        <label for="last-name-signup">last name:</label>
+        <input type="text" id="last-name-signup" placeholder="last name"/>
+      </div>
+      <div class='hoverable left-align'>
+        <label for="email-signup">email:</label>
+        <input type="text" id="email-signup" placeholder="email@email.com"/>
+      </div>
+      <div class='hoverable left-align'>
+        <label for="password-signup">password:</label>
+        <input type="password" id="password-signup" placeholder="password"/>
+      </div>
+      <div class='hoverable left-align'>
+        <label for="team-code">team code:</label>
+        <input type="text" id="team-code-signup" placeholder="code"/>
+      </div>
+      <div>
+        <button type="submit" class='btn waves-effect blue-grey lighten-2 hoverable center-align'>signup</button>
+      </div>
+    </form>
   </div>
-  <div class='hoverable'>
-    <label for="last-name-signup">last name:</label>
-    <input type="text" id="last-name-signup" placeholder="Last Name"/>
-  </div>
-  <div class='hoverable'>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" placeholder="email@email.com"/>
-  </div>
-  <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" placeholder="password"/>
-  </div class='hoverable'>
-    <div>
-    <label for="team-code">team code:</label>
-    <input type="text" id="team-code-signup" placeholder="code"/>
-  </div>
-  <div>
-    <button type="submit" class='btn waves-effect blue-grey lighten-3 hoverable'>signup</button>
-  </div>
-</form>
+</div>
 
 <script src="/javascript/login.js"></script>

@@ -5,7 +5,7 @@
       <input type="text" name="team-name" id="team-name">
       <label for="team-code">Team Code</label>
       <input type="text" name="team-code" id="team-code">
-      <div class="center-align"><button type="submit" class="waves-effect teal lighten-3 btn"><div class='valign-wrapper'><span class="material-icons">add</span>Create Team</div></button></div>
+      <div class="center-align"><button type="submit" class="waves-effect teal lighten-2 btn"><div class='valign-wrapper'><span class="material-icons">add</span>Create Team</div></button></div>
     </form>
   </section>
   <section data-aos="slide-left" data-aos-duration="500" class='padding2 shadow1 radius'>
@@ -16,13 +16,15 @@
         <th>Wins</th>
         <th>Losses</th>
         <th>Team Code</th>
+        <th>Edit Team</th>
+        <th>Delete Team</th>
       </tr>
       {{#each team}}
         <tr>
           {{> team-info }}
           <td>{{dataValues.code}}</td>
-          <td><button class=" waves-effect waves-light btn"><a href="/edit/team/{{dataValues.team_id}}" class="edit-link icon-white"><span class="material-icons md-light">edit</span></a></button></td>
-          <td><button class="team-delete-btn waves-effect red lighten-3 btn" id="{{dataValues.team_id}}"><span class="material-icons md-light">delete</span></button></td>
+          <td><button class="waves-effect waves-light btn teal lighten-2"><a href="/edit/team/{{dataValues.team_id}}" class="edit-link icon-white"><span class="material-icons md-light">edit</span></a></button></td>
+          <td><button class="team-delete-btn waves-effect red lighten-2 btn" id="{{dataValues.team_id}}"><span class="material-icons md-light">delete</span></button></td>
         </tr>
       {{/each}}
     </table>
@@ -51,17 +53,23 @@
         <option value="8">8:00 p.m.</option>
         <option value="9">9:00 p.m.</option>
       </select>
-      <div class='center-align'><button type="submit" class="team-delete-btn waves-effect teal lighten-3 btn"><div class='valign-wrapper'><span class="material-icons">add</span>Add Game</div></button></div> 
+      <div class='center-align'><button type="submit" class="waves-effect teal lighten-2 btn"><div class='valign-wrapper'><span class="material-icons">add</span>Add Game</div></button></div> 
     </form>
   </section>
   <section data-aos="fade-up" data-aos-duration="500" class='padding2 shadow1 radius'>
     <h4 id="schedule" class='padding2'>League Schedule</h4>
     <table class='highlight striped'>
-      {{> game-table-header}}
+      <tr>
+        <th>Game Date</th>
+        <th>Game Time</th>
+        <th>Home Team</th>
+        <th>Away Team</th>
+        <th>Delete Team</th>
+      </tr>
         {{#each game}}
           <tr>
             {{> game-partial}}    
-            <td><button class="game-delete-btn waves-effect red lighten-3 btn" id={{dataValues.game_id}}><span class="material-icons">delete</span></button></td>
+            <td><button class="game-delete-btn waves-effect red lighten-2 btn" id={{dataValues.game_id}}><span class="material-icons">delete</span></button></td>
           </tr>
         {{/each}}
     </table>
