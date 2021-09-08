@@ -14,15 +14,13 @@
     <div class="wrapper center-align">
       <header>
         <h1 data-aos="flip-up" data-aos-duration="1000">
-          🏐
-          <a href="/" class='black-text shadow'>VOLLEY-ALL</a>
+          <a href="/" class='teal-text text-lighten-2 shadow letter-spacing'>🏐 VOLLEY-ALL</a>
         </h1>
         <nav data-aos="fade-in" data-aos-duration="1500" class="overlay2">
-          
           {{#if loggedIn}}
             {{#if is_Admin}}
             <a href="/" class ="col grey-text padding2">dashboard</a>
-            <a href="#create-a-team" class ='col grey-text padding2'>create a team</a>
+            <a href="#create-a-team" class='col grey-text padding2 disappear'>create a team</a>
             {{> admin-navbar-partial}}
             <a href="/login" id="logout" class="col btn-no-style grey-text padding2">logout</a>
             {{/if}}
@@ -32,7 +30,7 @@
             <a href="/login" id="logout" class="col btn-no-style grey-text padding2">logout</a>
             {{/unless}}
           {{else}}
-            <p class="shadow">Volley For All. Volley-All.</p>
+            <p class="shadow letter-spacing">volley for all. all in one place.</p>
           {{/if}}
         </nav>
       </header>
@@ -40,7 +38,7 @@
         {{{body}}}
       </main>
       <footer>
-        <a href="https://github.com/rrcampbell-exe/volley-all" target="_blank" class="col btn-no-style grey-text padding2">Bump, set, and spike with us on GitHub.</a>
+        <a href="https://github.com/rrcampbell-exe/volley-all" target="_blank" class="col btn-no-style teal-text text-lighten-2 padding2">Bump, set, and spike with us on GitHub.</a>
       </footer>
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

@@ -1,32 +1,28 @@
-html {
+html, body {
   scroll-behavior: smooth;
+  margin: 0;
 }
 
-#myVideo {
+#login-page-video {
   position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  /* min-height: 100vw; */
+  left: 0;
+  top: 0;
+  width: 100%;
   z-index: -5000;
   filter: opacity(40);
   filter: blur(2 px);
 }
 
-/* .left-column {
-  margin-right: 1.25%;
-} */
-
-/* .right-column {
-  margin-left: 1.25%;
-} */
-
-.background2 {
-  background-image: url("/media/pexels-engin-akyurt-1552620.jpg");
+.welcome-background {
+  background-image: url("/media/pexels-kampus-production-6180386.jpg");
   background-color: rgb(209, 209, 209);
   background-size: cover;
   z-index: -2000;
   opacity: 0.2;
+}
+
+.letter-spacing {
+  letter-spacing: 4px;
 }
 
 .overlay {
@@ -80,4 +76,37 @@ footer {
 
 footer a {
   text-shadow: 1px 1px 5px white;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-aspect-ratio: 16/9) {
+  #login-page-video {
+      width:100%;
+      height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #login-page-video { 
+      width:auto;
+      height: 100%;
+  }
+}
+@media (max-width: 767px) {
+  #login-page-video {
+      display: none;
+  }
+
+  .letter-spacing {
+    letter-spacing: 2px;
+  }
+
+  .disappear {
+    display: none;
+  }
+
+  body {
+      background: url('/media/pexels-kampus-production-6180386.jpg') no-repeat fixed;
+      background-size: cover;
+  }
 }
