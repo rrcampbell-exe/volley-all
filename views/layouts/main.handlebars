@@ -21,15 +21,15 @@
           
           {{#if loggedIn}}
             {{#if is_Admin}}
-            <a href="/" class ="col grey-text">dashboard</a>
-            <a href="#create-a-team" class ='col grey-text'>create a team</a>
+            <a href="/" class ="col grey-text padding2">dashboard</a>
+            <a href="#create-a-team" class ='col grey-text padding2'>create a team</a>
             {{> admin-navbar-partial}}
-            <a href="/login" id="logout" class="col btn-no-style grey-text">logout</a>
+            <a href="/login" id="logout" class="col btn-no-style grey-text padding2">logout</a>
             {{/if}}
             {{#unless is_Admin}}
             <a href="/">dashboard</a>
             {{> player-navbar-partial}}
-            <a href="/login" id="logout" class="col btn-no-style grey-text">logout</a>
+            <a href="/login" id="logout" class="col btn-no-style grey-text padding2">logout</a>
             {{/unless}}
           {{else}}
             {{!-- SOOOO do we need a link to the login page on the login page? maybe not lol --}}
