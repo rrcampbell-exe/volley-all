@@ -1,12 +1,14 @@
 <div>
-  <div>
-  <h3>Welcome, {{user.dataValues.first_name}}!</h3>
-</div>
-<div data-aos="fade-up" data-aos-duration="1000">
-    <h4>{{user_team.dataValues.team_name}}</h4>
-    <p>Team Record: {{user_team.dataValues.wins}} Wins, {{user_team.dataValues.losses}} Losses</p>
-</div>
-  <section data-aos="slide-right" data-aos-duration="1000" class='margin2 shadow1 radius'>
+  <div class='background2 radius shadow1 padding2 margin3'>
+        <div>
+            <h3>Welcome, {{user.dataValues.first_name}}!</h3>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <h4>{{user_team.dataValues.team_name}}</h4>
+            <p>Team Record: {{user_team.dataValues.wins}} Wins, {{user_team.dataValues.losses}} Losses</p>
+        </div>
+  </div>
+  <section data-aos="slide-right" data-aos-duration="1000" class='margin2 shadow1 radius padding2'>
     <h4 id="schedule" class='padding2'>Team Schedule</h4>
     <table class='padding1 highlight striped'>
       {{> game-table-header}}
@@ -23,7 +25,7 @@
     </section>
   {{/unless}}
 
-  <section data-aos="slide-left" data-aos-duration="500" class='margin2 shadow1 radius'>
+  <section data-aos="slide-left" data-aos-duration="500" class='margin2 shadow1 radius padding2'>
     <h4 id="league-standings" class='padding2'>League Standings</h4>
     <table class='padding1 highlight striped'>
       <tr class='padding1'>
@@ -39,7 +41,7 @@
     </table>
   </section>
 
-  <section data-aos="fade-up" data-aos-duration="1000" class='margin2 shadow1 radius'>
+  <section data-aos="fade-up" data-aos-duration="1000" class='margin2 shadow1 radius padding2'>
     <h4 id="team-roster" class='padding2'>{{user_team.dataValues.team_name}} Roster</h4>
     <table class='padding1 highlight striped'>
         <tr>

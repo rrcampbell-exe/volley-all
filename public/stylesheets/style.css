@@ -16,6 +16,13 @@ html {
     
   }
 
+  .background2{
+    background-image: url("\media\pexels-engin-akyurt-1552620.jpg");
+    background-color: rgb(168, 168, 168);
+    background-size: cover;
+    z-index: -2000;
+  }
+
   .overlay{
       background: rgba(255,255,255,0.90)
   }
@@ -39,7 +46,10 @@ html {
   }
 
   .margin2{
-    margin: 8vw 0vw;
+    margin: 4vw 0vw;
+  }
+  .margin3{
+    margin: 2vw 0;
   }
   .radius{
       border-radius: 2vw;
