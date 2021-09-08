@@ -5,7 +5,7 @@
       <input type="text" name="team-name" id="team-name">
       <label for="team-code">Team Code</label>
       <input type="text" name="team-code" id="team-code">
-      <button type="submit">Create Team</button>
+      <div class="center-align"><button type="submit" class="team-delete-btn waves-effect teal lighten-3 btn"><div class='valign-wrapper'><span class="material-icons">add</span>Create Team</div></button></div>
     </form>
   </section>
   <section data-aos="slide-left" data-aos-duration="500">
@@ -29,7 +29,7 @@
   </section>
   <section data-aos="fade-in" data-aos-duration="1000">
     <h2 id="add-a-game">Add A Game</h2>
-    <form class="create-game-form">
+    <form class="create-game-form left-align margin1 padding1">
       <label for="home-team">Home Team</label>
         <select name="home-team" id="home-team" class="browser-default">
           {{#each team}}
@@ -51,7 +51,7 @@
         <option value="8">8:00 p.m.</option>
         <option value="9">9:00 p.m.</option>
       </select>
-      <button type="submit">Add Game</button> 
+      <div class='center-align'><button type="submit" class="team-delete-btn waves-effect teal lighten-3 btn"><div class='valign-wrapper'><span class="material-icons">add</span>Add Game</div></button></div> 
     </form>
   </section>
   <section data-aos="fade-up" data-aos-duration="500">
