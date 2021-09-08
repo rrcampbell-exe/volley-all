@@ -23,8 +23,8 @@
         <tr>
           {{> team-info }}
           <td>{{dataValues.code}}</td>
-          <td><button class="waves-effect waves-light btn teal lighten-2"><a href="/edit/team/{{dataValues.team_id}}" class="edit-link icon-white"><span class="material-icons md-light">edit</span></a></button></td>
-          <td><button class="team-delete-btn waves-effect red lighten-2 btn" id="{{dataValues.team_id}}"><span class="material-icons md-light">delete</span></button></td>
+          <td><a href="/edit/team/{{dataValues.team_id}}" class="edit-link icon-white"><button class="waves-effect waves-light btn teal lighten-2"><span class="material-icons md-light">edit</span></button></a></td>
+          <td><button class="team-delete-btn waves-effect red lighten-2 btn" id="{{dataValues.team_id}}"><span id="{{dataValues.team_id}}" class="material-icons md-light">delete</span></button></td>
         </tr>
       {{/each}}
     </table>
@@ -64,12 +64,12 @@
         <th>Game Time</th>
         <th>Home Team</th>
         <th>Away Team</th>
-        <th>Delete Team</th>
+        <th>Delete Game</th>
       </tr>
         {{#each game}}
           <tr>
             {{> game-partial}}    
-            <td><button class="game-delete-btn waves-effect red lighten-2 btn" id={{dataValues.game_id}}><span class="material-icons">delete</span></button></td>
+            <td><button class="game-delete-btn waves-effect red lighten-2 btn" id={{dataValues.game_id}}><span class="material-icons" id={{dataValues.game_id}}>delete</span></button></td>
           </tr>
         {{/each}}
     </table>

@@ -1,15 +1,23 @@
 <section>
   <h2>Edit {{team.team_name}}</h2>
   <form class="edit-team-form">
-    <label for="team-name">Team Name</label>
-    <input type="text" name="team-name" id="team-name" value="{{team.team_name}}"/>
-    <label for="team-code">Team Code</label>
-    <input type="text" name="team-code" id="team-code" value="{{team.code}}" />
-    <label for="team-wins">Wins</label>
-    <input type="text" name="team-wins" id="team-wins" value="{{team.wins}}" />
-    <label for="team-losses">Losses</label>
-    <input type="text" name="team-losses" id="team-losses" value="{{team.losses}}" />
-    <button type="submit" id="edit-team-button" class='waves-effect teal lighten-3 btn'>Save Changes</button>
+    <div class="left-align">
+      <label for="team-name">Team Name</label>
+      <input type="text" name="team-name" id="team-name" value="{{team.team_name}}"/>
+    </div>
+    <div class="left-align">
+      <label for="team-code">Team Code</label>
+      <input type="text" name="team-code" id="team-code" value="{{team.code}}" />
+    </div>
+    <div class="left-align">
+      <label for="team-wins">Wins</label>
+      <input type="text" name="team-wins" id="team-wins" value="{{team.wins}}" />
+    </div>
+    <div class="left-align">
+      <label for="team-losses">Losses</label>
+      <input type="text" name="team-losses" id="team-losses" value="{{team.losses}}" />
+    </div>
+    <button type="submit" id="edit-team-button" class='waves-effect teal lighten-2 btn'>Save Changes</button>
   </form>
 </section>
 
