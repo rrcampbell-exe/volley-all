@@ -19,7 +19,7 @@ async function gameCreateHandler(event) {
     });
 
     if (response.ok) {
-      window.location.replace("/#schedule");
+      window.location.replace("/");
     } else {
       alert(response.statusText);
     }
