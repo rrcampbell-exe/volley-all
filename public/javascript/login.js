@@ -10,8 +10,7 @@ function signupFormHandler(event) {
   fetch("/api/teams/")
     .then((res) => res.json())
     .then((teamData) => {
-      console.log(teamData);
-      console.log(team_code);
+
       // compare team_code to all codes
 
       const foundTeam = teamData.find(function(team, index) {
@@ -19,8 +18,6 @@ function signupFormHandler(event) {
           return true;
         }
       })
-
-      console.log(foundTeam)
 
       if (foundTeam) {
         let team_name = foundTeam.team_name;
@@ -42,7 +39,6 @@ async function signUpCompletion(
 ) {
 
   if (first_name && last_name && email && password && team_name) {
-    console.log(team_name);
     const response = await fetch("/api/users/", {
       method: "post",
       body: JSON.stringify({

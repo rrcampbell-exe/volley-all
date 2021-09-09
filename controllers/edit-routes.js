@@ -20,7 +20,6 @@ router.get("/team/:team_id", withAuth, (req, res) => {
     .then((dbTeamData) => {
       if (dbTeamData) {
         const team = dbTeamData.get({ plain: true });
-        console.log(team)
 
         res.render("edit-team", {
           team,

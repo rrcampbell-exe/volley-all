@@ -43,7 +43,6 @@ router.get("/", (req, res) => {
               },
             }).then((allGames) => {
               let adminBool = userData.dataValues.is_Admin;
-              console.log(adminBool)
               res.render("player-dashboard", {
                 loggedIn: req.session.loggedIn,
                 is_Admin: adminBool,
@@ -61,7 +60,6 @@ router.get("/", (req, res) => {
           order: [["date", "ASC"], ["time", "ASC"]],
         }).then((gameInfo) => {
           let adminBool = userData.dataValues.is_Admin;
-          console.log(adminBool)
           res.render("admin-dashboard", {
             loggedIn: req.session.loggedIn,
             is_Admin: adminBool,
