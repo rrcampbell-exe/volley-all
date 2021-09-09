@@ -4,25 +4,16 @@
 Volley-All is a full-stack application that helps taverns and bars manage their recreational volleyball leagues.
 
 ## Table of Contents
-- [Screenshots](#screenshots)
-- [Usage](#usage)
-- [Credits](#credits)
+- [Usage & Login Credentials](#usage)
 - [Features](#features)
-- [Contributing](#contributing)
+- [Credits](#credits)
+- [Screenshots](#screenshots)
 - [Questions, Comments, Suggestions](#questions-comments-suggestions)
 
-## Screenshots
-### Login Page
-![A screenshot of the Volley-All login page.](screenshot-login.png)
+## Usage & Login Credentials
+To demo Volley-All, please visit [https://volley-all.herokuapp.com/](https://volley-all.herokuapp.com/). 
 
-### Admin Homepage
-![A screenshot of the Volley-All admin homepage.](screenshot-admin-dashboard.png)
-
-### Player Homepage
-![A screenshot of the Volley-All player homepage.](screenshot-player-dashboard.png)
-
-## Usage
-Please visit [https://volley-all.herokuapp.com/](https://volley-all.herokuapp.com/) and create an account to log in as a user. To log in as an admin, you can find admin login credentials in the `seeds` folder under `user-seeds`.
+To view the site as an administrator, please use the email address `admin@gmail.com` with password `pswd12345`. To view the site as a player, please use the email address `jeremy@gmail.com` with password `pswd12345`.
 
 ## Features
  - aos.js
@@ -38,9 +29,6 @@ Please visit [https://volley-all.herokuapp.com/](https://volley-all.herokuapp.co
  - Sequelize
  - UUID
 
-## Contributing
-Please open a pull request to contribute to this project.
-
 ## Credits
 ### Developed By
 - [Ryan R. Campbell](https://www.github.com/rrcampbell-exe/)
@@ -50,6 +38,16 @@ Please open a pull request to contribute to this project.
 
 ### Media
 - Volleyball player photos and video by [Kampus Production](https://www.pexels.com/@kampus) on Pexels
+
+## Screenshots
+### Login Page
+![A screenshot of the Volley-All login page.](screenshot-login.png)
+
+### Admin Homepage
+![A screenshot of the Volley-All admin homepage.](screenshot-admin-dashboard.png)
+
+### Player Homepage
+![A screenshot of the Volley-All player homepage.](screenshot-player-dashboard.png)
 
 ## Questions, Comments, Suggestions
 Please email [Ryan R. Campbell](mailto:campbell.ryan.r@gmail.com) with any questions, to report any bugs, or to make any feature suggestions. You can also [contact Ryan R. Campbell on GitHub](https://www.github.com/rrcampbell-exe/).
